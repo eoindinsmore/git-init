@@ -50,3 +50,8 @@ def statcan_raw(fixture_dir: Path) -> Any:
 @pytest.fixture(scope="session")
 def estat_raw(fixture_dir: Path) -> dict:
     return _load(fixture_dir, "estat_statsdata_0004033012.json")
+
+
+@pytest.fixture(scope="session")
+def cftc_raw(fixture_dir: Path) -> Any:
+    return _load(fixture_dir, "cftc_disagg_copper.json")

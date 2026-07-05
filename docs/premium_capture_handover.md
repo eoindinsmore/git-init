@@ -41,9 +41,10 @@ Append-only; the store never overwrites. Point-in-time retrieval via
 
 ## Known limitations / next
 - **Front-month only** — NOT the premium forward curve. The term structure (charter
-  option c) needs a legitimate CME source; a research task is tracking free/official
-  channels (CME DataMine, cloud marketplaces). See `docs/cme_premium_data_options.md`
-  (pending).
+  option c) needs a legitimate CME source; free automated access does not exist
+  (CME's website API is ToS-prohibited from 2024-01-08). Options analysed in
+  [cme_premium_data_options.md](cme_premium_data_options.md): paid DataMine EoD,
+  DataMine-for-Education (50% off if academic), or manual capture into `data/manual/`.
 - Thin contracts (volume 0–7): expect gaps/stale quotes. `frequency: D` but real
   cadence is irregular.
 - yfinance is an unofficial dependency; if it breaks, the job fails loudly and no

@@ -1,0 +1,58 @@
+# CFTC Commitments of Traders (disaggregated futures-only), COMEX copper.
+# One series per position field; source_code = CFTC column, source_params.market
+# filters the dataset. category: positioning.
+
+- series_id: copper_cot_open_interest
+  source: cftc
+  source_code: open_interest_all
+  name: "COMEX Copper COT — open interest (all)"
+  unit: "contracts"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: US, category: positioning}
+  source_params: {market: "COPPER%"}
+
+- series_id: copper_cot_mm_long
+  source: cftc
+  source_code: m_money_positions_long_all
+  name: "COMEX Copper COT — managed money long"
+  unit: "contracts"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: US, category: positioning}
+  source_params: {market: "COPPER%"}
+
+- series_id: copper_cot_mm_short
+  source: cftc
+  source_code: m_money_positions_short_all
+  name: "COMEX Copper COT — managed money short"
+  unit: "contracts"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: US, category: positioning}
+  source_params: {market: "COPPER%"}
+
+- series_id: copper_cot_prod_long
+  source: cftc
+  source_code: prod_merc_positions_long
+  name: "COMEX Copper COT — producer/merchant long"
+  unit: "contracts"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: US, category: positioning}
+  source_params: {market: "COPPER%"}
+
+- series_id: copper_cot_prod_short
+  source: cftc
+  source_code: prod_merc_positions_short
+  name: "COMEX Copper COT — producer/merchant short"
+  unit: "contracts"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: US, category: positioning}
+  source_params: {market: "COPPER%"}
