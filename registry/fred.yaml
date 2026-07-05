@@ -14,6 +14,7 @@
     metal: null
     country: US
     category: activity
+    macro_theme: activity
 
 # Price proxy: IMF global copper price via FRED (free). Not an exchange price —
 # carries caveats per the charter (auto-rendered on charts/PDFs).
@@ -29,6 +30,7 @@
     metal: copper
     country: null
     category: price_proxy
+    macro_theme: commodities
   caveats: >-
     IMF Primary Commodity Prices — a monthly reference average, NOT an LME/COMEX
     settlement. No intramonth granularity; may lag exchange moves. Use as a

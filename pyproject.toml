@@ -23,6 +23,13 @@ dev = [
 proxies = [
     "yfinance>=0.2",
 ]
+app = [
+    "streamlit>=1.36",
+    "altair>=5.2",
+]
+tools = [
+    "ruamel.yaml>=0.18",
+]
 
 [build-system]
 requires = ["setuptools>=68"]

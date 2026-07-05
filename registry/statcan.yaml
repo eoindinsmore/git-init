@@ -17,5 +17,6 @@
     metal: null
     country: CA
     category: activity
+    macro_theme: activity
   source_params:
     latestN: "600"

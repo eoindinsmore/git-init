@@ -13,6 +13,7 @@
     metal: aluminium
     country: US
     category: price_proxy
+    macro_theme: commodities
   caveats: >-
     yfinance front-month continuous for CME AUP=F, NOT the full forward curve and
     NOT the CME published settlement across all listed months (that source is
@@ -32,6 +33,7 @@
     metal: aluminium
     country: null
     category: price_proxy
+    macro_theme: commodities
   caveats: >-
     yfinance front-month continuous for CME EDP=F, NOT the full forward curve.
     European duty-paid premium; thin contract, expect gaps/stale quotes. Front

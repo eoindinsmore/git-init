@@ -10,7 +10,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: US, category: positioning}
+  tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
 
 - series_id: copper_cot_mm_long
@@ -21,7 +21,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: US, category: positioning}
+  tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
 
 - series_id: copper_cot_mm_short
@@ -32,7 +32,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: US, category: positioning}
+  tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
 
 - series_id: copper_cot_prod_long
@@ -43,7 +43,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: US, category: positioning}
+  tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
 
 - series_id: copper_cot_prod_short
@@ -54,5 +54,5 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: US, category: positioning}
+  tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}

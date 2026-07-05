@@ -8,10 +8,11 @@
   unit: "Index"
   frequency: M
   sa_status: NSA
-  transformations: []
+  transformations: [yoy]
   tags:
     metal: steel
     country: JP
     category: activity
+    macro_theme: activity
   selector:
     cat02: "2021010010"

@@ -13,6 +13,7 @@
     metal: null
     country: DE
     category: activity
+    macro_theme: activity
   source_params:
     geo: DE
     nace_r2: B-D

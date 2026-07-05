@@ -11,7 +11,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: GB, category: positioning}
+  tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
   source_params: {folder: "ca-copper", key: "ca", category: "Investment Funds", side: "Long", basis: "Total"}
 
 - series_id: copper_lme_inv_funds_short
@@ -22,7 +22,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: GB, category: positioning}
+  tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
   source_params: {folder: "ca-copper", key: "ca", category: "Investment Funds", side: "Short", basis: "Total"}
 
 - series_id: copper_lme_commercial_long
@@ -33,7 +33,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: GB, category: positioning}
+  tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
   source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Long", basis: "Total"}
 
 - series_id: copper_lme_commercial_short
@@ -44,5 +44,5 @@
   frequency: W
   sa_status: NSA
   transformations: []
-  tags: {metal: copper, country: GB, category: positioning}
+  tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
   source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Short", basis: "Total"}

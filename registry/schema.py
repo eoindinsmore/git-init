@@ -34,7 +34,12 @@ class SAStatus(StrEnum):
 
 
 class Category(StrEnum):
-    """Broad role of the series in the platform."""
+    """Broad role of the series in the platform.
+
+    This drives *behaviour* — e.g. ``price_proxy`` forces a ``caveats`` field and
+    auto-renders it on charts. Do not overload it with dashboard grouping; that is
+    what ``MacroTheme`` is for.
+    """
 
     ACTIVITY = "activity"  # industrial production, PMIs, etc.
     PRICE_PROXY = "price_proxy"  # free stand-in for a licensed price
@@ -42,6 +47,25 @@ class Category(StrEnum):
     DEMAND = "demand"  # apparent/end-use demand
     TRADE = "trade"  # imports/exports
     POSITIONING = "positioning"  # COT and similar
+    ENERGY = "energy"  # energy input costs
+    OTHER = "other"
+
+
+class MacroTheme(StrEnum):
+    """Dashboard grouping axis — independent of ``Category``.
+
+    ``Category`` encodes a series' *role* (and drives behaviour like price-proxy
+    caveats); ``MacroTheme`` is the reader-facing bucket the app filters on
+    (Activity / Inflation / Rates / Commodity prices / Positioning). Kept separate
+    so the two taxonomies can evolve without colliding. Optional: a series with no
+    theme groups under "Unclassified" in the UI.
+    """
+
+    ACTIVITY = "activity"  # industrial production, PMIs, orders, output
+    INFLATION = "inflation"  # CPI/PPI/deflators (no series yet)
+    RATES = "rates"  # policy rates, yields (no series yet)
+    COMMODITIES = "commodities"  # commodity prices & physical premiums
+    POSITIONING = "positioning"  # COT / futures positioning
     ENERGY = "energy"  # energy input costs
     OTHER = "other"
 
@@ -55,6 +79,7 @@ class Tags(BaseModel):
     metal: str | None = None  # e.g. "copper", "aluminium", or None (macro)
     country: str | None = None  # ISO-ish short code or name, e.g. "US", "DE"
     category: Category
+    macro_theme: MacroTheme | None = None  # reader-facing dashboard bucket (app filter)
 
 
 class SeriesSpec(BaseModel):
