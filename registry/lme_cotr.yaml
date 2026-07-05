@@ -1,0 +1,48 @@
+# LME Commitments of Traders (MiFID II), free weekly XLSX per metal.
+# One series per (category, side); source_params carries the CDN folder/key and
+# the cell selector. category: positioning. Adds an LME-side view to complement
+# the CFTC COMEX COT (different exchange, MiFID II classifications).
+
+- series_id: copper_lme_inv_funds_long
+  source: lme_cotr
+  source_code: ca
+  name: "LME Copper COTR — Investment Funds long (total)"
+  unit: "lots"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: GB, category: positioning}
+  source_params: {folder: "ca-copper", key: "ca", category: "Investment Funds", side: "Long", basis: "Total"}
+
+- series_id: copper_lme_inv_funds_short
+  source: lme_cotr
+  source_code: ca
+  name: "LME Copper COTR — Investment Funds short (total)"
+  unit: "lots"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: GB, category: positioning}
+  source_params: {folder: "ca-copper", key: "ca", category: "Investment Funds", side: "Short", basis: "Total"}
+
+- series_id: copper_lme_commercial_long
+  source: lme_cotr
+  source_code: ca
+  name: "LME Copper COTR — Commercial Undertakings long (total)"
+  unit: "lots"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: GB, category: positioning}
+  source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Long", basis: "Total"}
+
+- series_id: copper_lme_commercial_short
+  source: lme_cotr
+  source_code: ca
+  name: "LME Copper COTR — Commercial Undertakings short (total)"
+  unit: "lots"
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags: {metal: copper, country: GB, category: positioning}
+  source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Short", basis: "Total"}

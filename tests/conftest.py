@@ -55,3 +55,8 @@ def estat_raw(fixture_dir: Path) -> dict:
 @pytest.fixture(scope="session")
 def cftc_raw(fixture_dir: Path) -> Any:
     return _load(fixture_dir, "cftc_disagg_copper.json")
+
+
+@pytest.fixture(scope="session")
+def lme_cotr_xlsx(fixture_dir: Path) -> bytes:
+    return (fixture_dir / "lme_cotr_copper_30062026.xlsx").read_bytes()
