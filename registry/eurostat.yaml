@@ -12,12 +12,516 @@
   publication_lag_days: 40
   release_schedule: "monthly, ~40 days after the reference month (Eurostat STS)"
   tags:
-    metal: null
+    metal:
     country: DE
     category: activity
     macro_theme: activity
   source_params:
     geo: DE
     nace_r2: B-D
+    s_adj: SCA
+    unit: I21
+- series_id: eu_ip_total
+  source: eurostat
+  source_code: sts_inpr_m
+  name: EU27_2020 industrial production — industry (mining+manufacturing+energy) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: EU
+    macro_theme: activity
+  source_params:
+    geo: EU27_2020
+    nace_r2: B-D
+    s_adj: SCA
+    unit: I21
+- series_id: de_ip_total
+  source: eurostat
+  source_code: sts_inpr_m
+  name: DE industrial production — industry (mining+manufacturing+energy) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: DE
+    macro_theme: activity
+  source_params:
+    geo: DE
+    nace_r2: B-D
+    s_adj: SCA
+    unit: I21
+- series_id: fr_ip_total
+  source: eurostat
+  source_code: sts_inpr_m
+  name: FR industrial production — industry (mining+manufacturing+energy) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: FR
+    macro_theme: activity
+  source_params:
+    geo: FR
+    nace_r2: B-D
+    s_adj: SCA
+    unit: I21
+- series_id: it_ip_total
+  source: eurostat
+  source_code: sts_inpr_m
+  name: IT industrial production — industry (mining+manufacturing+energy) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: IT
+    macro_theme: activity
+  source_params:
+    geo: IT
+    nace_r2: B-D
+    s_adj: SCA
+    unit: I21
+- series_id: es_ip_total
+  source: eurostat
+  source_code: sts_inpr_m
+  name: ES industrial production — industry (mining+manufacturing+energy) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: ES
+    macro_theme: activity
+  source_params:
+    geo: ES
+    nace_r2: B-D
+    s_adj: SCA
+    unit: I21
+- series_id: pl_ip_total
+  source: eurostat
+  source_code: sts_inpr_m
+  name: PL industrial production — industry (mining+manufacturing+energy) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: PL
+    macro_theme: activity
+  source_params:
+    geo: PL
+    nace_r2: B-D
+    s_adj: SCA
+    unit: I21
+- series_id: eu_ip_mfg
+  source: eurostat
+  source_code: sts_inpr_m
+  name: EU27_2020 industrial production — manufacturing (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: EU
+    macro_theme: activity
+  source_params:
+    geo: EU27_2020
+    nace_r2: C
+    s_adj: SCA
+    unit: I21
+- series_id: de_ip_mfg
+  source: eurostat
+  source_code: sts_inpr_m
+  name: DE industrial production — manufacturing (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: DE
+    macro_theme: activity
+  source_params:
+    geo: DE
+    nace_r2: C
+    s_adj: SCA
+    unit: I21
+- series_id: fr_ip_mfg
+  source: eurostat
+  source_code: sts_inpr_m
+  name: FR industrial production — manufacturing (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: FR
+    macro_theme: activity
+  source_params:
+    geo: FR
+    nace_r2: C
+    s_adj: SCA
+    unit: I21
+- series_id: it_ip_mfg
+  source: eurostat
+  source_code: sts_inpr_m
+  name: IT industrial production — manufacturing (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: IT
+    macro_theme: activity
+  source_params:
+    geo: IT
+    nace_r2: C
+    s_adj: SCA
+    unit: I21
+- series_id: es_ip_mfg
+  source: eurostat
+  source_code: sts_inpr_m
+  name: ES industrial production — manufacturing (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: ES
+    macro_theme: activity
+  source_params:
+    geo: ES
+    nace_r2: C
+    s_adj: SCA
+    unit: I21
+- series_id: pl_ip_mfg
+  source: eurostat
+  source_code: sts_inpr_m
+  name: PL industrial production — manufacturing (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: PL
+    macro_theme: activity
+  source_params:
+    geo: PL
+    nace_r2: C
+    s_adj: SCA
+    unit: I21
+- series_id: eu_ip_basic_metals
+  source: eurostat
+  source_code: sts_inpr_m
+  name: EU27_2020 industrial production — basic metals (NACE C24) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: EU
+    macro_theme: activity
+  source_params:
+    geo: EU27_2020
+    nace_r2: C24
+    s_adj: SCA
+    unit: I21
+- series_id: de_ip_basic_metals
+  source: eurostat
+  source_code: sts_inpr_m
+  name: DE industrial production — basic metals (NACE C24) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: DE
+    macro_theme: activity
+  source_params:
+    geo: DE
+    nace_r2: C24
+    s_adj: SCA
+    unit: I21
+- series_id: fr_ip_basic_metals
+  source: eurostat
+  source_code: sts_inpr_m
+  name: FR industrial production — basic metals (NACE C24) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: FR
+    macro_theme: activity
+  source_params:
+    geo: FR
+    nace_r2: C24
+    s_adj: SCA
+    unit: I21
+- series_id: it_ip_basic_metals
+  source: eurostat
+  source_code: sts_inpr_m
+  name: IT industrial production — basic metals (NACE C24) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: IT
+    macro_theme: activity
+  source_params:
+    geo: IT
+    nace_r2: C24
+    s_adj: SCA
+    unit: I21
+- series_id: es_ip_basic_metals
+  source: eurostat
+  source_code: sts_inpr_m
+  name: ES industrial production — basic metals (NACE C24) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: ES
+    macro_theme: activity
+  source_params:
+    geo: ES
+    nace_r2: C24
+    s_adj: SCA
+    unit: I21
+- series_id: pl_ip_basic_metals
+  source: eurostat
+  source_code: sts_inpr_m
+  name: PL industrial production — basic metals (NACE C24) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: PL
+    macro_theme: activity
+  source_params:
+    geo: PL
+    nace_r2: C24
+    s_adj: SCA
+    unit: I21
+- series_id: eu_ip_fab_metal
+  source: eurostat
+  source_code: sts_inpr_m
+  name: EU27_2020 industrial production — fabricated metal products (NACE C25) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: EU
+    macro_theme: activity
+  source_params:
+    geo: EU27_2020
+    nace_r2: C25
+    s_adj: SCA
+    unit: I21
+- series_id: de_ip_fab_metal
+  source: eurostat
+  source_code: sts_inpr_m
+  name: DE industrial production — fabricated metal products (NACE C25) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: DE
+    macro_theme: activity
+  source_params:
+    geo: DE
+    nace_r2: C25
+    s_adj: SCA
+    unit: I21
+- series_id: fr_ip_fab_metal
+  source: eurostat
+  source_code: sts_inpr_m
+  name: FR industrial production — fabricated metal products (NACE C25) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: FR
+    macro_theme: activity
+  source_params:
+    geo: FR
+    nace_r2: C25
+    s_adj: SCA
+    unit: I21
+- series_id: it_ip_fab_metal
+  source: eurostat
+  source_code: sts_inpr_m
+  name: IT industrial production — fabricated metal products (NACE C25) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: IT
+    macro_theme: activity
+  source_params:
+    geo: IT
+    nace_r2: C25
+    s_adj: SCA
+    unit: I21
+- series_id: es_ip_fab_metal
+  source: eurostat
+  source_code: sts_inpr_m
+  name: ES industrial production — fabricated metal products (NACE C25) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: ES
+    macro_theme: activity
+  source_params:
+    geo: ES
+    nace_r2: C25
+    s_adj: SCA
+    unit: I21
+- series_id: pl_ip_fab_metal
+  source: eurostat
+  source_code: sts_inpr_m
+  name: PL industrial production — fabricated metal products (NACE C25) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    country: PL
+    macro_theme: activity
+  source_params:
+    geo: PL
+    nace_r2: C25
+    s_adj: SCA
+    unit: I21
+- series_id: eu_ip_casting
+  source: eurostat
+  source_code: sts_inpr_m
+  name: EU27_2020 industrial production — casting of metals (NACE C245) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: EU
+    macro_theme: activity
+  source_params:
+    geo: EU27_2020
+    nace_r2: C245
+    s_adj: SCA
+    unit: I21
+- series_id: de_ip_casting
+  source: eurostat
+  source_code: sts_inpr_m
+  name: DE industrial production — casting of metals (NACE C245) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: DE
+    macro_theme: activity
+  source_params:
+    geo: DE
+    nace_r2: C245
+    s_adj: SCA
+    unit: I21
+- series_id: fr_ip_casting
+  source: eurostat
+  source_code: sts_inpr_m
+  name: FR industrial production — casting of metals (NACE C245) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: FR
+    macro_theme: activity
+  source_params:
+    geo: FR
+    nace_r2: C245
+    s_adj: SCA
+    unit: I21
+- series_id: it_ip_casting
+  source: eurostat
+  source_code: sts_inpr_m
+  name: IT industrial production — casting of metals (NACE C245) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: IT
+    macro_theme: activity
+  source_params:
+    geo: IT
+    nace_r2: C245
+    s_adj: SCA
+    unit: I21
+- series_id: es_ip_casting
+  source: eurostat
+  source_code: sts_inpr_m
+  name: ES industrial production — casting of metals (NACE C245) (SCA)
+  unit: Index 2021=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: metals
+    country: ES
+    macro_theme: activity
+  source_params:
+    geo: ES
+    nace_r2: C245
     s_adj: SCA
     unit: I21

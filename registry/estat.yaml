@@ -18,3 +18,87 @@
     macro_theme: activity
   selector:
     cat02: "2021010010"
+- series_id: jp_iip_2021010020
+  source: estat
+  source_code: '0004033012'
+  name: Japan IIP — 金属製品工業_鉄骨・橋りょう
+  unit: Index
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    country: JP
+    macro_theme: activity
+  selector:
+    cat02: '2021010020'
+- series_id: jp_iip_2021010030
+  source: estat
+  source_code: '0004033012'
+  name: Japan IIP — 金属製品工業_超硬チップ
+  unit: Index
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    country: JP
+    macro_theme: activity
+  selector:
+    cat02: '2021010030'
+- series_id: jp_iip_2021010040
+  source: estat
+  source_code: '0004033012'
+  name: Japan IIP — 金属製品工業_かさね板ばね
+  unit: Index
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    country: JP
+    macro_theme: activity
+  selector:
+    cat02: '2021010040'
+- series_id: jp_iip_2021010050
+  source: estat
+  source_code: '0004033012'
+  name: Japan IIP — 金属製品工業_線ばね
+  unit: Index
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    country: JP
+    macro_theme: activity
+  selector:
+    cat02: '2021010050'
+- series_id: jp_iip_2021010110
+  source: estat
+  source_code: '0004033012'
+  name: Japan IIP — 生産用機械工業_金属工作機械
+  unit: Index
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    country: JP
+    macro_theme: activity
+  selector:
+    cat02: '2021010110'
+- series_id: jp_iip_2021010400
+  source: estat
+  source_code: '0004033012'
+  name: Japan IIP — 電気・情報通信機械工業_鉛蓄電池
+  unit: Index
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    country: JP
+    macro_theme: activity
+  selector:
+    cat02: '2021010400'

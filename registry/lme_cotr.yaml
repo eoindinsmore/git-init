@@ -42,7 +42,8 @@
   publication_lag_days: 4
   release_schedule: "weekly, Tuesday for the prior Friday positions"
   tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
-  source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Long", basis: "Total"}
+  source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Long", 
+      basis: "Total"}
 
 - series_id: copper_lme_commercial_short
   source: lme_cotr
@@ -55,4 +56,841 @@
   publication_lag_days: 4
   release_schedule: "weekly, Tuesday for the prior Friday positions"
   tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
-  source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Short", basis: "Total"}
+  source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Short", 
+      basis: "Total"}
+- series_id: copper_lme_inv_firms_long
+  source: lme_cotr
+  source_code: ca
+  name: LME Copper COTR — Investment Firms/credit institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: copper
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ca-copper
+    key: ca
+    category: Investment Firms
+    side: Long
+    basis: Total
+- series_id: copper_lme_inv_firms_short
+  source: lme_cotr
+  source_code: ca
+  name: LME Copper COTR — Investment Firms/credit institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: copper
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ca-copper
+    key: ca
+    category: Investment Firms
+    side: Short
+    basis: Total
+- series_id: copper_lme_other_fin_long
+  source: lme_cotr
+  source_code: ca
+  name: LME Copper COTR — Other Financial Institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: copper
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ca-copper
+    key: ca
+    category: Other Financial
+    side: Long
+    basis: Total
+- series_id: copper_lme_other_fin_short
+  source: lme_cotr
+  source_code: ca
+  name: LME Copper COTR — Other Financial Institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: copper
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ca-copper
+    key: ca
+    category: Other Financial
+    side: Short
+    basis: Total
+- series_id: aluminium_lme_inv_funds_long
+  source: lme_cotr
+  source_code: ah
+  name: LME Aluminium COTR — Investment Funds long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ah-aluminium
+    key: ah
+    category: Investment Funds
+    side: Long
+    basis: Total
+- series_id: aluminium_lme_inv_funds_short
+  source: lme_cotr
+  source_code: ah
+  name: LME Aluminium COTR — Investment Funds short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ah-aluminium
+    key: ah
+    category: Investment Funds
+    side: Short
+    basis: Total
+- series_id: aluminium_lme_commercial_long
+  source: lme_cotr
+  source_code: ah
+  name: LME Aluminium COTR — Commercial Undertakings long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ah-aluminium
+    key: ah
+    category: Commercial Undertaking
+    side: Long
+    basis: Total
+- series_id: aluminium_lme_commercial_short
+  source: lme_cotr
+  source_code: ah
+  name: LME Aluminium COTR — Commercial Undertakings short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ah-aluminium
+    key: ah
+    category: Commercial Undertaking
+    side: Short
+    basis: Total
+- series_id: aluminium_lme_inv_firms_long
+  source: lme_cotr
+  source_code: ah
+  name: LME Aluminium COTR — Investment Firms/credit institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ah-aluminium
+    key: ah
+    category: Investment Firms
+    side: Long
+    basis: Total
+- series_id: aluminium_lme_inv_firms_short
+  source: lme_cotr
+  source_code: ah
+  name: LME Aluminium COTR — Investment Firms/credit institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ah-aluminium
+    key: ah
+    category: Investment Firms
+    side: Short
+    basis: Total
+- series_id: aluminium_lme_other_fin_long
+  source: lme_cotr
+  source_code: ah
+  name: LME Aluminium COTR — Other Financial Institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ah-aluminium
+    key: ah
+    category: Other Financial
+    side: Long
+    basis: Total
+- series_id: aluminium_lme_other_fin_short
+  source: lme_cotr
+  source_code: ah
+  name: LME Aluminium COTR — Other Financial Institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ah-aluminium
+    key: ah
+    category: Other Financial
+    side: Short
+    basis: Total
+- series_id: zinc_lme_inv_funds_long
+  source: lme_cotr
+  source_code: zs
+  name: LME Zinc COTR — Investment Funds long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: zinc
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: zs-zinc
+    key: zs
+    category: Investment Funds
+    side: Long
+    basis: Total
+- series_id: zinc_lme_inv_funds_short
+  source: lme_cotr
+  source_code: zs
+  name: LME Zinc COTR — Investment Funds short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: zinc
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: zs-zinc
+    key: zs
+    category: Investment Funds
+    side: Short
+    basis: Total
+- series_id: zinc_lme_commercial_long
+  source: lme_cotr
+  source_code: zs
+  name: LME Zinc COTR — Commercial Undertakings long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: zinc
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: zs-zinc
+    key: zs
+    category: Commercial Undertaking
+    side: Long
+    basis: Total
+- series_id: zinc_lme_commercial_short
+  source: lme_cotr
+  source_code: zs
+  name: LME Zinc COTR — Commercial Undertakings short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: zinc
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: zs-zinc
+    key: zs
+    category: Commercial Undertaking
+    side: Short
+    basis: Total
+- series_id: zinc_lme_inv_firms_long
+  source: lme_cotr
+  source_code: zs
+  name: LME Zinc COTR — Investment Firms/credit institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: zinc
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: zs-zinc
+    key: zs
+    category: Investment Firms
+    side: Long
+    basis: Total
+- series_id: zinc_lme_inv_firms_short
+  source: lme_cotr
+  source_code: zs
+  name: LME Zinc COTR — Investment Firms/credit institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: zinc
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: zs-zinc
+    key: zs
+    category: Investment Firms
+    side: Short
+    basis: Total
+- series_id: zinc_lme_other_fin_long
+  source: lme_cotr
+  source_code: zs
+  name: LME Zinc COTR — Other Financial Institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: zinc
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: zs-zinc
+    key: zs
+    category: Other Financial
+    side: Long
+    basis: Total
+- series_id: zinc_lme_other_fin_short
+  source: lme_cotr
+  source_code: zs
+  name: LME Zinc COTR — Other Financial Institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: zinc
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: zs-zinc
+    key: zs
+    category: Other Financial
+    side: Short
+    basis: Total
+- series_id: nickel_lme_inv_funds_long
+  source: lme_cotr
+  source_code: ni
+  name: LME Nickel COTR — Investment Funds long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: nickel
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ni-nickel
+    key: ni
+    category: Investment Funds
+    side: Long
+    basis: Total
+- series_id: nickel_lme_inv_funds_short
+  source: lme_cotr
+  source_code: ni
+  name: LME Nickel COTR — Investment Funds short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: nickel
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ni-nickel
+    key: ni
+    category: Investment Funds
+    side: Short
+    basis: Total
+- series_id: nickel_lme_commercial_long
+  source: lme_cotr
+  source_code: ni
+  name: LME Nickel COTR — Commercial Undertakings long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: nickel
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ni-nickel
+    key: ni
+    category: Commercial Undertaking
+    side: Long
+    basis: Total
+- series_id: nickel_lme_commercial_short
+  source: lme_cotr
+  source_code: ni
+  name: LME Nickel COTR — Commercial Undertakings short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: nickel
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ni-nickel
+    key: ni
+    category: Commercial Undertaking
+    side: Short
+    basis: Total
+- series_id: nickel_lme_inv_firms_long
+  source: lme_cotr
+  source_code: ni
+  name: LME Nickel COTR — Investment Firms/credit institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: nickel
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ni-nickel
+    key: ni
+    category: Investment Firms
+    side: Long
+    basis: Total
+- series_id: nickel_lme_inv_firms_short
+  source: lme_cotr
+  source_code: ni
+  name: LME Nickel COTR — Investment Firms/credit institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: nickel
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ni-nickel
+    key: ni
+    category: Investment Firms
+    side: Short
+    basis: Total
+- series_id: nickel_lme_other_fin_long
+  source: lme_cotr
+  source_code: ni
+  name: LME Nickel COTR — Other Financial Institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: nickel
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ni-nickel
+    key: ni
+    category: Other Financial
+    side: Long
+    basis: Total
+- series_id: nickel_lme_other_fin_short
+  source: lme_cotr
+  source_code: ni
+  name: LME Nickel COTR — Other Financial Institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: nickel
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: ni-nickel
+    key: ni
+    category: Other Financial
+    side: Short
+    basis: Total
+- series_id: lead_lme_inv_funds_long
+  source: lme_cotr
+  source_code: pb
+  name: LME Lead COTR — Investment Funds long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: lead
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: pb-lead
+    key: pb
+    category: Investment Funds
+    side: Long
+    basis: Total
+- series_id: lead_lme_inv_funds_short
+  source: lme_cotr
+  source_code: pb
+  name: LME Lead COTR — Investment Funds short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: lead
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: pb-lead
+    key: pb
+    category: Investment Funds
+    side: Short
+    basis: Total
+- series_id: lead_lme_commercial_long
+  source: lme_cotr
+  source_code: pb
+  name: LME Lead COTR — Commercial Undertakings long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: lead
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: pb-lead
+    key: pb
+    category: Commercial Undertaking
+    side: Long
+    basis: Total
+- series_id: lead_lme_commercial_short
+  source: lme_cotr
+  source_code: pb
+  name: LME Lead COTR — Commercial Undertakings short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: lead
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: pb-lead
+    key: pb
+    category: Commercial Undertaking
+    side: Short
+    basis: Total
+- series_id: lead_lme_inv_firms_long
+  source: lme_cotr
+  source_code: pb
+  name: LME Lead COTR — Investment Firms/credit institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: lead
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: pb-lead
+    key: pb
+    category: Investment Firms
+    side: Long
+    basis: Total
+- series_id: lead_lme_inv_firms_short
+  source: lme_cotr
+  source_code: pb
+  name: LME Lead COTR — Investment Firms/credit institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: lead
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: pb-lead
+    key: pb
+    category: Investment Firms
+    side: Short
+    basis: Total
+- series_id: lead_lme_other_fin_long
+  source: lme_cotr
+  source_code: pb
+  name: LME Lead COTR — Other Financial Institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: lead
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: pb-lead
+    key: pb
+    category: Other Financial
+    side: Long
+    basis: Total
+- series_id: lead_lme_other_fin_short
+  source: lme_cotr
+  source_code: pb
+  name: LME Lead COTR — Other Financial Institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: lead
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: pb-lead
+    key: pb
+    category: Other Financial
+    side: Short
+    basis: Total
+- series_id: tin_lme_inv_funds_long
+  source: lme_cotr
+  source_code: sn
+  name: LME Tin COTR — Investment Funds long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: tin
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: sn-tin
+    key: sn
+    category: Investment Funds
+    side: Long
+    basis: Total
+- series_id: tin_lme_inv_funds_short
+  source: lme_cotr
+  source_code: sn
+  name: LME Tin COTR — Investment Funds short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: tin
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: sn-tin
+    key: sn
+    category: Investment Funds
+    side: Short
+    basis: Total
+- series_id: tin_lme_commercial_long
+  source: lme_cotr
+  source_code: sn
+  name: LME Tin COTR — Commercial Undertakings long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: tin
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: sn-tin
+    key: sn
+    category: Commercial Undertaking
+    side: Long
+    basis: Total
+- series_id: tin_lme_commercial_short
+  source: lme_cotr
+  source_code: sn
+  name: LME Tin COTR — Commercial Undertakings short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: tin
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: sn-tin
+    key: sn
+    category: Commercial Undertaking
+    side: Short
+    basis: Total
+- series_id: tin_lme_inv_firms_long
+  source: lme_cotr
+  source_code: sn
+  name: LME Tin COTR — Investment Firms/credit institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: tin
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: sn-tin
+    key: sn
+    category: Investment Firms
+    side: Long
+    basis: Total
+- series_id: tin_lme_inv_firms_short
+  source: lme_cotr
+  source_code: sn
+  name: LME Tin COTR — Investment Firms/credit institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: tin
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: sn-tin
+    key: sn
+    category: Investment Firms
+    side: Short
+    basis: Total
+- series_id: tin_lme_other_fin_long
+  source: lme_cotr
+  source_code: sn
+  name: LME Tin COTR — Other Financial Institutions long (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: tin
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: sn-tin
+    key: sn
+    category: Other Financial
+    side: Long
+    basis: Total
+- series_id: tin_lme_other_fin_short
+  source: lme_cotr
+  source_code: sn
+  name: LME Tin COTR — Other Financial Institutions short (total)
+  unit: lots
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: tin
+    country: GB
+    macro_theme: positioning
+  source_params:
+    folder: sn-tin
+    key: sn
+    category: Other Financial
+    side: Short
+    basis: Total

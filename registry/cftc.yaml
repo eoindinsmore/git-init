@@ -70,3 +70,585 @@
   release_schedule: "weekly, Friday 15:30 ET for Tuesday positions"
   tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
+- series_id: copper_cot_swap_long
+  source: cftc
+  source_code: swap_positions_long_all
+  name: COMEX Copper COT — swap dealer long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: copper
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: 'COPPER- #1%'
+- series_id: copper_cot_swap_short
+  source: cftc
+  source_code: swap__positions_short_all
+  name: COMEX Copper COT — swap dealer short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: copper
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: 'COPPER- #1%'
+- series_id: copper_cot_other_long
+  source: cftc
+  source_code: other_rept_positions_long
+  name: COMEX Copper COT — other reportables long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: copper
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: 'COPPER- #1%'
+- series_id: copper_cot_other_short
+  source: cftc
+  source_code: other_rept_positions_short
+  name: COMEX Copper COT — other reportables short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: copper
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: 'COPPER- #1%'
+- series_id: aluminium_cot_open_interest
+  source: cftc
+  source_code: open_interest_all
+  name: COMEX Aluminium COT — open interest (all)
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: aluminium_cot_mm_long
+  source: cftc
+  source_code: m_money_positions_long_all
+  name: COMEX Aluminium COT — managed money long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: aluminium_cot_mm_short
+  source: cftc
+  source_code: m_money_positions_short_all
+  name: COMEX Aluminium COT — managed money short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: aluminium_cot_prod_long
+  source: cftc
+  source_code: prod_merc_positions_long
+  name: COMEX Aluminium COT — producer/merchant long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: aluminium_cot_prod_short
+  source: cftc
+  source_code: prod_merc_positions_short
+  name: COMEX Aluminium COT — producer/merchant short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: aluminium_cot_swap_long
+  source: cftc
+  source_code: swap_positions_long_all
+  name: COMEX Aluminium COT — swap dealer long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: aluminium_cot_swap_short
+  source: cftc
+  source_code: swap__positions_short_all
+  name: COMEX Aluminium COT — swap dealer short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: aluminium_cot_other_long
+  source: cftc
+  source_code: other_rept_positions_long
+  name: COMEX Aluminium COT — other reportables long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: aluminium_cot_other_short
+  source: cftc
+  source_code: other_rept_positions_short
+  name: COMEX Aluminium COT — other reportables short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: aluminium
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: ALUMINUM - %
+- series_id: cobalt_cot_open_interest
+  source: cftc
+  source_code: open_interest_all
+  name: COMEX Cobalt COT — open interest (all)
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: cobalt_cot_mm_long
+  source: cftc
+  source_code: m_money_positions_long_all
+  name: COMEX Cobalt COT — managed money long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: cobalt_cot_mm_short
+  source: cftc
+  source_code: m_money_positions_short_all
+  name: COMEX Cobalt COT — managed money short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: cobalt_cot_prod_long
+  source: cftc
+  source_code: prod_merc_positions_long
+  name: COMEX Cobalt COT — producer/merchant long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: cobalt_cot_prod_short
+  source: cftc
+  source_code: prod_merc_positions_short
+  name: COMEX Cobalt COT — producer/merchant short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: cobalt_cot_swap_long
+  source: cftc
+  source_code: swap_positions_long_all
+  name: COMEX Cobalt COT — swap dealer long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: cobalt_cot_swap_short
+  source: cftc
+  source_code: swap__positions_short_all
+  name: COMEX Cobalt COT — swap dealer short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: cobalt_cot_other_long
+  source: cftc
+  source_code: other_rept_positions_long
+  name: COMEX Cobalt COT — other reportables long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: cobalt_cot_other_short
+  source: cftc
+  source_code: other_rept_positions_short
+  name: COMEX Cobalt COT — other reportables short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    metal: cobalt
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: COBALT - %
+- series_id: gold_cot_open_interest
+  source: cftc
+  source_code: open_interest_all
+  name: COMEX Gold COT — open interest (all)
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: gold_cot_mm_long
+  source: cftc
+  source_code: m_money_positions_long_all
+  name: COMEX Gold COT — managed money long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: gold_cot_mm_short
+  source: cftc
+  source_code: m_money_positions_short_all
+  name: COMEX Gold COT — managed money short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: gold_cot_prod_long
+  source: cftc
+  source_code: prod_merc_positions_long
+  name: COMEX Gold COT — producer/merchant long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: gold_cot_prod_short
+  source: cftc
+  source_code: prod_merc_positions_short
+  name: COMEX Gold COT — producer/merchant short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: gold_cot_swap_long
+  source: cftc
+  source_code: swap_positions_long_all
+  name: COMEX Gold COT — swap dealer long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: gold_cot_swap_short
+  source: cftc
+  source_code: swap__positions_short_all
+  name: COMEX Gold COT — swap dealer short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: gold_cot_other_long
+  source: cftc
+  source_code: other_rept_positions_long
+  name: COMEX Gold COT — other reportables long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: gold_cot_other_short
+  source: cftc
+  source_code: other_rept_positions_short
+  name: COMEX Gold COT — other reportables short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: GOLD - %
+- series_id: silver_cot_open_interest
+  source: cftc
+  source_code: open_interest_all
+  name: COMEX Silver COT — open interest (all)
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %
+- series_id: silver_cot_mm_long
+  source: cftc
+  source_code: m_money_positions_long_all
+  name: COMEX Silver COT — managed money long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %
+- series_id: silver_cot_mm_short
+  source: cftc
+  source_code: m_money_positions_short_all
+  name: COMEX Silver COT — managed money short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %
+- series_id: silver_cot_prod_long
+  source: cftc
+  source_code: prod_merc_positions_long
+  name: COMEX Silver COT — producer/merchant long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %
+- series_id: silver_cot_prod_short
+  source: cftc
+  source_code: prod_merc_positions_short
+  name: COMEX Silver COT — producer/merchant short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %
+- series_id: silver_cot_swap_long
+  source: cftc
+  source_code: swap_positions_long_all
+  name: COMEX Silver COT — swap dealer long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %
+- series_id: silver_cot_swap_short
+  source: cftc
+  source_code: swap__positions_short_all
+  name: COMEX Silver COT — swap dealer short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %
+- series_id: silver_cot_other_long
+  source: cftc
+  source_code: other_rept_positions_long
+  name: COMEX Silver COT — other reportables long
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %
+- series_id: silver_cot_other_short
+  source: cftc
+  source_code: other_rept_positions_short
+  name: COMEX Silver COT — other reportables short
+  unit: contracts
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: positioning
+    country: US
+    macro_theme: positioning
+  source_params:
+    market: SILVER - %

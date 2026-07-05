@@ -13,7 +13,7 @@
   publication_lag_days: 16
   release_schedule: "monthly, ~mid-month for the prior month (Federal Reserve G.17)"
   tags:
-    metal: null
+    metal:
     country: US
     category: activity
     macro_theme: activity
@@ -32,10 +32,1885 @@
   release_schedule: "monthly, early in the month for the prior month (IMF PCPS)"
   tags:
     metal: copper
-    country: null
+    country:
     category: price_proxy
     macro_theme: commodities
   caveats: >-
     IMF Primary Commodity Prices — a monthly reference average, NOT an LME/COMEX
     settlement. No intramonth granularity; may lag exchange moves. Use as a
     long-history proxy only, not for execution or premium analysis.
+- series_id: fred_palumusdm
+  source: fred
+  source_code: PALUMUSDM
+  name: Global price of Aluminum
+  unit: U.S. $ per Metric Ton
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: aluminium
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Aluminum'), M frequency — a free public proxy, 
+    NOT a licensed exchange settlement. Verify basis before quantitative use; may be a 
+    monthly/quarterly average with no intramonth detail.
+- series_id: fred_wpu101707
+  source: fred
+  source_code: WPU101707
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Cold Rolled Steel Sheet and Strip'
+  unit: Index Jun 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_piorecrusdm
+  source: fred
+  source_code: PIORECRUSDM
+  name: Global price of Iron Ore
+  unit: U.S. $ per Metric Ton
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: iron_ore
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Iron Ore'), M frequency — a free public proxy, 
+    NOT a licensed exchange settlement. Verify basis before quantitative use; may be a 
+    monthly/quarterly average with no intramonth detail.
+- series_id: fred_wpu10170674
+  source: fred
+  source_code: WPU10170674
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Steel Pipe and Tube, Stainless
+    Steel'
+  unit: Index Dec 2010=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_wpu101
+  source: fred
+  source_code: WPU101
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Iron and Steel'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_pnickusdm
+  source: fred
+  source_code: PNICKUSDM
+  name: Global price of Nickel
+  unit: U.S. $ per Metric Ton
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: nickel
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Nickel'), M frequency — a free public proxy, NOT 
+    a licensed exchange settlement. Verify basis before quantitative use; may be a monthly/quarterly
+    average with no intramonth detail.
+- series_id: fred_wpu1017
+  source: fred
+  source_code: WPU1017
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Steel Mill Products'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_wpu1012
+  source: fred
+  source_code: WPU1012
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Iron and Steel Scrap'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_wpu101704
+  source: fred
+  source_code: WPU101704
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Hot Rolled Steel Bars, Plates,
+    and Structural Shapes'
+  unit: Index Jun 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_wpusi019011
+  source: fred
+  source_code: WPUSI019011
+  name: 'Producer Price Index by Commodity: Special Indexes: Copper and Copper Products'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: copper
+    macro_theme: commodities
+- series_id: fred_pzincusdm
+  source: fred
+  source_code: PZINCUSDM
+  name: Global price of Zinc
+  unit: U.S. $ per Metric Ton
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: zinc
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Zinc'), M frequency — a free public proxy, NOT a 
+    licensed exchange settlement. Verify basis before quantitative use; may be a monthly/quarterly 
+    average with no intramonth detail.
+- series_id: fred_pcu3313133131
+  source: fred
+  source_code: PCU3313133131
+  name: 'Producer Price Index by Industry: Alumina and Aluminum Production and Processing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: aluminium
+    macro_theme: commodities
+- series_id: fred_pcoppusdq
+  source: fred
+  source_code: PCOPPUSDQ
+  name: Global price of Copper
+  unit: U.S. $ per Metric Ton
+  frequency: Q
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: copper
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Copper'), Q frequency — a free public proxy, NOT 
+    a licensed exchange settlement. Verify basis before quantitative use; may be a monthly/quarterly
+    average with no intramonth detail.
+- series_id: fred_wpu10260314
+  source: fred
+  source_code: WPU10260314
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Copper Wire and Cable'
+  unit: Index Dec 1986=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: copper
+    macro_theme: commodities
+- series_id: fred_wpu10250162
+  source: fred
+  source_code: WPU10250162
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Extruded Aluminum Shapes, Including
+    Rod, Bar, and Wire'
+  unit: Index Dec 2004=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: aluminium
+    macro_theme: commodities
+- series_id: fred_wpu10170502
+  source: fred
+  source_code: WPU10170502
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Steel Wire, Stainless Steel'
+  unit: Index Dec 2010=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_ir14200
+  source: fred
+  source_code: IR14200
+  name: 'Import Price Index (End Use): Bauxite and Aluminum'
+  unit: Index 2000=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: trade
+    metal: aluminium
+    macro_theme: activity
+- series_id: fred_pleadusdm
+  source: fred
+  source_code: PLEADUSDM
+  name: Global price of Lead
+  unit: U.S. $ per Metric Ton
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: lead
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Lead'), M frequency — a free public proxy, NOT a 
+    licensed exchange settlement. Verify basis before quantitative use; may be a monthly/quarterly 
+    average with no intramonth detail.
+- series_id: fred_wps101
+  source: fred
+  source_code: WPS101
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Iron and Steel'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_ptinusdq
+  source: fred
+  source_code: PTINUSDQ
+  name: Global price of Tin
+  unit: U.S. $ per Metric Ton
+  frequency: Q
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: tin
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Tin'), Q frequency — a free public proxy, NOT a 
+    licensed exchange settlement. Verify basis before quantitative use; may be a monthly/quarterly 
+    average with no intramonth detail.
+- series_id: fred_wpu10760102
+  source: fred
+  source_code: WPU10760102
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Fabricated Steel Plate'
+  unit: Index Dec 2001=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_wpu102504
+  source: fred
+  source_code: WPU102504
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Nickel and Nickel-Base Alloy Mill
+    Shapes'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: nickel
+    macro_theme: commodities
+- series_id: fred_wpu102501
+  source: fred
+  source_code: WPU102501
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Aluminum Mill Shapes'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: aluminium
+    macro_theme: commodities
+- series_id: fred_wps101704
+  source: fred
+  source_code: WPS101704
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Hot Rolled Steel Bars, Plates,
+    and Structural Shapes'
+  unit: Index Jun 1982=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_wpu102502
+  source: fred
+  source_code: WPU102502
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Copper and Brass Mill Shapes'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: copper
+    macro_theme: commodities
+- series_id: fred_caputlg3311a2s
+  source: fred
+  source_code: CAPUTLG3311A2S
+  name: 'Capacity Utilization: Manufacturing: Durable Goods: Iron and Steel Products (NAICS = 3311,2)'
+  unit: '%'
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    metal: steel
+    macro_theme: activity
+- series_id: fred_ptinusdm
+  source: fred
+  source_code: PTINUSDM
+  name: Global price of Tin
+  unit: U.S. $ per Metric Ton
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: tin
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Tin'), M frequency — a free public proxy, NOT a 
+    licensed exchange settlement. Verify basis before quantitative use; may be a monthly/quarterly 
+    average with no intramonth detail.
+- series_id: fred_pcoppusda
+  source: fred
+  source_code: PCOPPUSDA
+  name: Global price of Copper
+  unit: U.S. $ per Metric Ton
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: copper
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Copper'), A frequency — a free public proxy, NOT 
+    a licensed exchange settlement. Verify basis before quantitative use; may be a monthly/quarterly
+    average with no intramonth detail.
+- series_id: fred_pcu331315331315
+  source: fred
+  source_code: PCU331315331315
+  name: 'Producer Price Index by Industry: Aluminum Sheet, Plate, and Foil Manufacturing'
+  unit: Index Jun 1981=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    metal: aluminium
+    macro_theme: activity
+- series_id: fred_pcu3324313324311
+  source: fred
+  source_code: PCU3324313324311
+  name: 'Producer Price Index by Industry: Metal Can Manufacturing: Steel Cans and Tinware Products'
+  unit: Index Jun 1981=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    metal: steel
+    macro_theme: activity
+- series_id: fred_wps101707
+  source: fred
+  source_code: WPS101707
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Cold Rolled Steel Sheet and Strip'
+  unit: Index Jun 1982=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_pcu2122321223
+  source: fred
+  source_code: PCU2122321223
+  name: 'Producer Price Index by Industry: Copper, Nickel, Lead and Zinc Mining'
+  unit: Index Jun 1988=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    metal: copper
+    macro_theme: activity
+- series_id: fred_palumusdq
+  source: fred
+  source_code: PALUMUSDQ
+  name: Global price of Aluminum
+  unit: U.S. $ per Metric Ton
+  frequency: Q
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: aluminium
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Aluminum'), Q frequency — a free public proxy, 
+    NOT a licensed exchange settlement. Verify basis before quantitative use; may be a 
+    monthly/quarterly average with no intramonth detail.
+- series_id: fred_pcu3313153313150
+  source: fred
+  source_code: PCU3313153313150
+  name: 'Producer Price Index by Industry: Aluminum Sheet, Plate, and Foil Manufacturing: Aluminum Sheet,
+    Plate, and Foil'
+  unit: Index Jun 1981=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    metal: aluminium
+    macro_theme: activity
+- series_id: fred_piorecrusdq
+  source: fred
+  source_code: PIORECRUSDQ
+  name: Global price of Iron Ore
+  unit: U.S. $ per Metric Ton
+  frequency: Q
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: iron_ore
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Iron Ore'), Q frequency — a free public proxy, 
+    NOT a licensed exchange settlement. Verify basis before quantitative use; may be a 
+    monthly/quarterly average with no intramonth detail.
+- series_id: fred_dcoilwtico
+  source: fred
+  source_code: DCOILWTICO
+  name: 'Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'
+  unit: $ per Barrel
+  frequency: D
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_wpu10250238
+  source: fred
+  source_code: WPU10250238
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Copper and Copper Alloy Rod, Bar
+    and Shapes'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: copper
+    macro_theme: commodities
+- series_id: fred_palumusda
+  source: fred
+  source_code: PALUMUSDA
+  name: Global price of Aluminum
+  unit: U.S. $ per Metric Ton
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: price_proxy
+    metal: aluminium
+    macro_theme: commodities
+  caveats: FRED reference series ('Global price of Aluminum'), A frequency — a free public proxy, 
+    NOT a licensed exchange settlement. Verify basis before quantitative use; may be a 
+    monthly/quarterly average with no intramonth detail.
+- series_id: fred_wpu10170301
+  source: fred
+  source_code: WPU10170301
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Hot Rolled Steel Sheet and Strip,
+    Including Tin Mill Products'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: tin
+    macro_theme: commodities
+- series_id: fred_wpu10170710
+  source: fred
+  source_code: WPU10170710
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Cold Rolled Steel Sheet and Strip'
+  unit: Index Jun 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_wpu10250239
+  source: fred
+  source_code: WPU10250239
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Copper and Copper Alloy Pipe and
+    Tube'
+  unit: Index Jun 2004=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: copper
+    macro_theme: commodities
+- series_id: fred_wpu10250105
+  source: fred
+  source_code: WPU10250105
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Aluminum Sheet and Strip'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: aluminium
+    macro_theme: commodities
+- series_id: fred_wpu102402
+  source: fred
+  source_code: WPU102402
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Secondary Aluminum'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: aluminium
+    macro_theme: commodities
+- series_id: fred_pcu33133313
+  source: fred
+  source_code: PCU33133313
+  name: 'Producer Price Index by Industry: Alumina and Aluminum Production and Processing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: aluminium
+    macro_theme: commodities
+- series_id: fred_dcoilbrenteu
+  source: fred
+  source_code: DCOILBRENTEU
+  name: 'Crude Oil Prices: Brent - Europe'
+  unit: $ per Barrel
+  frequency: D
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_wpu102302
+  source: fred
+  source_code: WPU102302
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Aluminum Base Scrap'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: aluminium
+    macro_theme: commodities
+- series_id: fred_pcu3313143313142
+  source: fred
+  source_code: PCU3313143313142
+  name: 'Producer Price Index by Industry: Secondary Smelting and Alloying of Aluminum: Aluminum Ingot,
+    Including Billet, Made by Secondary Smelters'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: aluminium
+    macro_theme: commodities
+- series_id: fred_wpu10230101
+  source: fred
+  source_code: WPU10230101
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: No. 1 Copper Scrap, Including Wire'
+  unit: Index Dec 1986=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    metal: copper
+    macro_theme: commodities
+- series_id: fred_wps1012
+  source: fred
+  source_code: WPS1012
+  name: 'Producer Price Index by Commodity: Metals and Metal Products: Iron and Steel Scrap'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    metal: steel
+    macro_theme: commodities
+- series_id: fred_houst
+  source: fred
+  source_code: HOUST
+  name: 'New Privately-Owned Housing Units Started: Total Units'
+  unit: Thous. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_poilbreusdm
+  source: fred
+  source_code: POILBREUSDM
+  name: Global price of Brent Crude
+  unit: U.S. $ per Barrel
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: energy
+- series_id: fred_wtisplc
+  source: fred
+  source_code: WTISPLC
+  name: 'Spot Crude Oil Price: West Texas Intermediate (WTI)'
+  unit: $ per Barrel
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_tlmfgcons
+  source: fred
+  source_code: TLMFGCONS
+  name: 'Total Construction Spending: Manufacturing in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_dhhngsp
+  source: fred
+  source_code: DHHNGSP
+  name: Henry Hub Natural Gas Spot Price
+  unit: $ Per Mil. BTU
+  frequency: D
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_ipman
+  source: fred
+  source_code: IPMAN
+  name: 'Industrial Production: Manufacturing (NAICS)'
+  unit: Index 2017=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_dgorder
+  source: fred
+  source_code: DGORDER
+  name: "Manufacturers' New Orders: Durable Goods"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_tcu
+  source: fred
+  source_code: TCU
+  name: 'Capacity Utilization: Total Index'
+  unit: '%'
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu33443344
+  source: fred
+  source_code: PCU33443344
+  name: 'Producer Price Index by Industry: Semiconductor and Other Electronic Component Manufacturing'
+  unit: Index Dec 1984=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_ttlcons
+  source: fred
+  source_code: TTLCONS
+  name: 'Total Construction Spending: Total Construction in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_houst1f
+  source: fred
+  source_code: HOUST1F
+  name: 'New Privately-Owned Housing Units Started: Single-Family Units'
+  unit: Thous. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_mcoilwtico
+  source: fred
+  source_code: MCOILWTICO
+  name: 'Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'
+  unit: $ per Barrel
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_ovxcls
+  source: fred
+  source_code: OVXCLS
+  name: CBOE Crude Oil ETF Volatility Index
+  unit: Index
+  frequency: D
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_neworder
+  source: fred
+  source_code: NEWORDER
+  name: "Manufacturers' New Orders: Nondefense Capital Goods Excluding Aircraft"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_pcu32733273
+  source: fred
+  source_code: PCU32733273
+  name: 'Producer Price Index by Industry: Cement and Concrete Product Manufacturing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_amtmno
+  source: fred
+  source_code: AMTMNO
+  name: "Manufacturers' New Orders: Total Manufacturing"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_tlnrescons
+  source: fred
+  source_code: TLNRESCONS
+  name: 'Total Construction Spending: Nonresidential in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_mcoilbrenteu
+  source: fred
+  source_code: MCOILBRENTEU
+  name: 'Crude Oil Prices: Brent - Europe'
+  unit: $ per Barrel
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_vapgdpma
+  source: fred
+  source_code: VAPGDPMA
+  name: 'Value Added by Industry: Manufacturing as a Percentage of GDP'
+  unit: '%'
+  frequency: Q
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_tlrescons
+  source: fred
+  source_code: TLRESCONS
+  name: 'Total Construction Spending: Residential in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_daupsa
+  source: fred
+  source_code: DAUPSA
+  name: Domestic Auto Production
+  unit: Thous. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_poilwtiusdm
+  source: fred
+  source_code: POILWTIUSDM
+  name: Global price of WTI Crude
+  unit: U.S. $ per Barrel
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: energy
+- series_id: fred_mhhngsp
+  source: fred
+  source_code: MHHNGSP
+  name: Henry Hub Natural Gas Spot Price
+  unit: $ Per Mil. BTU
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_poildubusdm
+  source: fred
+  source_code: POILDUBUSDM
+  name: Global price of Dubai Crude
+  unit: U.S. $ per Barrel
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: energy
+- series_id: fred_cargsp
+  source: fred
+  source_code: CARGSP
+  name: 'Real Gross Domestic Product: All Industry Total in California'
+  unit: Mil. of Chn. 2017 $
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_pcu335311335311
+  source: fred
+  source_code: PCU335311335311
+  name: 'Producer Price Index by Industry: Electric Power and Specialty Transformer Manufacturing'
+  unit: Index Jun 1981=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu335311335311p
+  source: fred
+  source_code: PCU335311335311P
+  name: 'Producer Price Index by Industry: Electric Power and Specialty Transformer Manufacturing: Primary
+    Products'
+  unit: Index Jun 1981=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_houst5f
+  source: fred
+  source_code: HOUST5F
+  name: 'New Privately-Owned Housing Units Started: Units in Buildings with 5 Units or More'
+  unit: Thous. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_auinsa
+  source: fred
+  source_code: AUINSA
+  name: Domestic Auto Inventories
+  unit: Thous. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_pmetaindexm
+  source: fred
+  source_code: PMETAINDEXM
+  name: Global price of Metal index
+  unit: Index 2016 = 100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: commodities
+- series_id: fred_pcu3364133641
+  source: fred
+  source_code: PCU3364133641
+  name: 'Producer Price Index by Industry: Aerospace Product and Parts Manufacturing'
+  unit: Index Jun 1985=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_nyngsp
+  source: fred
+  source_code: NYNGSP
+  name: 'Gross Domestic Product: All Industry Total in New York'
+  unit: Mil. of $
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_pcu3353133531
+  source: fred
+  source_code: PCU3353133531
+  name: 'Producer Price Index by Industry: Electrical Equipment Manufacturing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_mcumfn
+  source: fred
+  source_code: MCUMFN
+  name: 'Capacity Utilization: Manufacturing (NAICS)'
+  unit: '%'
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_tlcomcons
+  source: fred
+  source_code: TLCOMCONS
+  name: 'Total Construction Spending: Commercial in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_poilbreusdq
+  source: fred
+  source_code: POILBREUSDQ
+  name: Global price of Brent Crude
+  unit: U.S. $ per Barrel
+  frequency: Q
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: energy
+- series_id: fred_poilbreusda
+  source: fred
+  source_code: POILBREUSDA
+  name: Global price of Brent Crude
+  unit: U.S. $ per Barrel
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: energy
+- series_id: fred_txngsp
+  source: fred
+  source_code: TXNGSP
+  name: 'Gross Domestic Product: All Industry Total in Texas'
+  unit: Mil. of $
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_flngsp
+  source: fred
+  source_code: FLNGSP
+  name: 'Gross Domestic Product: All Industry Total in Florida'
+  unit: Mil. of $
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_ipg3344s
+  source: fred
+  source_code: IPG3344S
+  name: 'Industrial Production: Manufacturing: Durable Goods: Semiconductor and Other Electronic Component
+    (NAICS = 3344)'
+  unit: Index 2017=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_tlpblcons
+  source: fred
+  source_code: TLPBLCONS
+  name: 'Total Public Construction Spending: Total Construction in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_pngasususdm
+  source: fred
+  source_code: PNGASUSUSDM
+  name: Global price of Natural Gas, US Henry Hub Gas
+  unit: U.S. $ per Mil. Metric British Thermal Unit
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_wcoilwtico
+  source: fred
+  source_code: WCOILWTICO
+  name: 'Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'
+  unit: $ per Barrel
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_houstnsa
+  source: fred
+  source_code: HOUSTNSA
+  name: 'New Privately-Owned Housing Units Started: Total Units'
+  unit: Thous. of Units
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_canqgsp
+  source: fred
+  source_code: CANQGSP
+  name: 'Gross Domestic Product: All Industry Total in California'
+  unit: Mil. of $
+  frequency: Q
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_a34sno
+  source: fred
+  source_code: A34SNO
+  name: "Manufacturers' New Orders: Computers and Electronic Products"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_pcu332332
+  source: fred
+  source_code: PCU332332
+  name: 'Producer Price Index by Industry: Fabricated Metal Product Manufacturing'
+  unit: Index Dec 1984=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_carqgsp
+  source: fred
+  source_code: CARQGSP
+  name: 'Real Gross Domestic Product: All Industry Total in California'
+  unit: Mil. of Chn. 2017 $
+  frequency: Q
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_adxtno
+  source: fred
+  source_code: ADXTNO
+  name: "Manufacturers' New Orders: Durable Goods Excluding Transportation"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_tlhwycons
+  source: fred
+  source_code: TLHWYCONS
+  name: 'Total Construction Spending: Highway and Street in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_pcu3344133441
+  source: fred
+  source_code: PCU3344133441
+  name: 'Producer Price Index by Industry: Semiconductor and Other Electronic Component Manufacturing'
+  unit: Index Dec 1984=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu334334
+  source: fred
+  source_code: PCU334334
+  name: 'Producer Price Index by Industry: Computer and Electronic Product Manufacturing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_wps1321
+  source: fred
+  source_code: WPS1321
+  name: 'Producer Price Index by Commodity: Nonmetallic Mineral Products: Construction Sand, Gravel and
+    Crushed Stone'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_tlhlthcons
+  source: fred
+  source_code: TLHLTHCONS
+  name: 'Total Construction Spending: Health Care in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_pnrescons
+  source: fred
+  source_code: PNRESCONS
+  name: 'Total Private Construction Spending: Nonresidential in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_whhngsp
+  source: fred
+  source_code: WHHNGSP
+  name: Henry Hub Natural Gas Spot Price
+  unit: $ Per Mil. BTU
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_acoilbrenteu
+  source: fred
+  source_code: ACOILBRENTEU
+  name: 'Crude Oil Prices: Brent - Europe'
+  unit: $ per Barrel
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_poilwtiusdq
+  source: fred
+  source_code: POILWTIUSDQ
+  name: Global price of WTI Crude
+  unit: U.S. $ per Barrel
+  frequency: Q
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: energy
+- series_id: fred_cangsp
+  source: fred
+  source_code: CANGSP
+  name: 'Gross Domestic Product: All Industry Total in California'
+  unit: Mil. of $
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_acogno
+  source: fred
+  source_code: ACOGNO
+  name: "Manufacturers' New Orders: Consumer Goods"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_iz3344
+  source: fred
+  source_code: IZ3344
+  name: 'Import Price Index (NAICS): Semiconductor and Other Electronic Component Manufacturing'
+  unit: Index Dec 2005=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_houst1fnsa
+  source: fred
+  source_code: HOUST1FNSA
+  name: 'New Privately-Owned Housing Units Started: Single-Family Units'
+  unit: Thous. of Units
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_prmfgcons
+  source: fred
+  source_code: PRMFGCONS
+  name: 'Total Private Construction Spending: Manufacturing in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_ipb50001n
+  source: fred
+  source_code: IPB50001N
+  name: 'Industrial Production: Total Index'
+  unit: Index 2017=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu33643364
+  source: fred
+  source_code: PCU33643364
+  name: 'Producer Price Index by Industry: Aerospace Product and Parts Manufacturing'
+  unit: Index Jun 1985=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_ipg331s
+  source: fred
+  source_code: IPG331S
+  name: 'Industrial Production: Manufacturing: Durable Goods: Primary Metal (NAICS = 331)'
+  unit: Index 2017=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_caputlg3344s
+  source: fred
+  source_code: CAPUTLG3344S
+  name: 'Capacity Utilization: Manufacturing: Durable Goods: Semiconductor and Other Electronic Component
+    (NAICS = 3344)'
+  unit: '%'
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_a33sno
+  source: fred
+  source_code: A33SNO
+  name: "Manufacturers' New Orders: Machinery"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_dautosaar
+  source: fred
+  source_code: DAUTOSAAR
+  name: 'Motor Vehicle Retail Sales: Domestic Autos'
+  unit: Mil. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_mvaautltts
+  source: fred
+  source_code: MVAAUTLTTS
+  name: 'Motor Vehicle Assemblies: Autos and Light Truck Assemblies'
+  unit: Mil. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_ipg211s
+  source: fred
+  source_code: IPG211S
+  name: 'Industrial Production: Mining: Oil and Gas Extraction (NAICS = 211)'
+  unit: Index 2017=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_adxdno
+  source: fred
+  source_code: ADXDNO
+  name: "Manufacturers' New Orders: Durable Goods Excluding Defense"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_tlmfgcon
+  source: fred
+  source_code: TLMFGCON
+  name: 'Total Construction Spending: Manufacturing in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_wcoilbrenteu
+  source: fred
+  source_code: WCOILBRENTEU
+  name: 'Crude Oil Prices: Brent - Europe'
+  unit: $ per Barrel
+  frequency: W
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_a35sno
+  source: fred
+  source_code: A35SNO
+  name: "Manufacturers' New Orders: Electrical Equipment, Appliances and Components"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_houst2f
+  source: fred
+  source_code: HOUST2F
+  name: 'New Privately-Owned Housing Units Started: Units in Buildings with 2-4 Units'
+  unit: Thous. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_pcu33411133411172
+  source: fred
+  source_code: PCU33411133411172
+  name: 'Producer Price Index by Industry: Electronic Computer Manufacturing: Portable Computers, Laptops,
+    Tablets and Other Single User Computers'
+  unit: Index Feb 2023=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu3353113353111
+  source: fred
+  source_code: PCU3353113353111
+  name: 'Producer Price Index by Industry: Electric Power and Specialty Transformer Manufacturing: Power
+    and Distribution Transformers, Except Parts'
+  unit: Index Dec 1999=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu33533353
+  source: fred
+  source_code: PCU33533353
+  name: 'Producer Price Index by Industry: Electrical Equipment Manufacturing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu334419334419
+  source: fred
+  source_code: PCU334419334419
+  name: 'Producer Price Index by Industry: Other Electronic Component Manufacturing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_chnprinto01ixpym
+  source: fred
+  source_code: CHNPRINTO01IXPYM
+  name: 'Production: Industry: Total Industry Excluding Construction for China'
+  unit: Index same period previous Yr. = 100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_wpu1321
+  source: fred
+  source_code: WPU1321
+  name: 'Producer Price Index by Commodity: Nonmetallic Mineral Products: Construction Sand, Gravel and
+    Crushed Stone'
+  unit: Index 1982=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_acdgno
+  source: fred
+  source_code: ACDGNO
+  name: "Manufacturers' New Orders: Consumer Durable Goods"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_prmfgcon
+  source: fred
+  source_code: PRMFGCON
+  name: 'Total Private Construction Spending: Manufacturing in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_acoilwtico
+  source: fred
+  source_code: ACOILWTICO
+  name: 'Crude Oil Prices: West Texas Intermediate (WTI) - Cushing, Oklahoma'
+  unit: $ per Barrel
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_caputlg2211s
+  source: fred
+  source_code: CAPUTLG2211S
+  name: 'Capacity Utilization: Utilities: Electric Power Generation, Transmission, and Distribution (NAICS
+    = 2211)'
+  unit: '%'
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_cumfns
+  source: fred
+  source_code: CUMFNS
+  name: 'Capacity Utilization: Manufacturing (SIC)'
+  unit: '%'
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_ipmine
+  source: fred
+  source_code: IPMINE
+  name: 'Industrial Production: Mining: Mining (NAICS = 21)'
+  unit: Index 2017=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu335335
+  source: fred
+  source_code: PCU335335
+  name: 'Producer Price Index by Industry: Electrical Equipment and Appliance Manufacturing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pcu33593359
+  source: fred
+  source_code: PCU33593359
+  name: 'Producer Price Index by Industry: Other Electrical Equipment and Component Manufacturing'
+  unit: Index Dec 2003=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_txnqgsp
+  source: fred
+  source_code: TXNQGSP
+  name: 'Gross Domestic Product: All Industry Total in Texas'
+  unit: Mil. of $
+  frequency: Q
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_usoilgasngsp
+  source: fred
+  source_code: USOILGASNGSP
+  name: 'Gross Domestic Product: Oil and Gas Extraction (211) in the United States'
+  unit: Mil. of $
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_pcu33441k33441k4
+  source: fred
+  source_code: PCU33441K33441K4
+  name: 'Producer Price Index by Industry: Capacitor, Resistor, Coil, Transformer, and Other Inductor
+    Manufacturing: Capacitors for Electronic Circuitry'
+  unit: Index Jun 1981=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_coindusz3344
+  source: fred
+  source_code: COINDUSZ3344
+  name: 'Import Price Index by Origin (NAICS): Semiconductor and Other Electronic Component Manufacturing
+    for Industrialized Countries'
+  unit: Index Jun 2012=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_a33cno
+  source: fred
+  source_code: A33CNO
+  name: "Manufacturers' New Orders: Construction Machinery Manufacturing"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_atcgno
+  source: fred
+  source_code: ATCGNO
+  name: "Manufacturers' New Orders: Capital Goods"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_houst5fnsa
+  source: fred
+  source_code: HOUST5FNSA
+  name: 'New Privately-Owned Housing Units Started: Units in Buildings with 5 Units or More'
+  unit: Thous. of Units
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_a32sno
+  source: fred
+  source_code: A32SNO
+  name: "Manufacturers' New Orders: Fabricated Metal Products"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_ahhngsp
+  source: fred
+  source_code: AHHNGSP
+  name: Henry Hub Natural Gas Spot Price
+  unit: $ Per Mil. BTU
+  frequency: A
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
+- series_id: fred_ipb50001sq
+  source: fred
+  source_code: IPB50001SQ
+  name: 'Industrial Production: Total Index'
+  unit: Index 2017=100
+  frequency: Q
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_ipgmfn
+  source: fred
+  source_code: IPGMFN
+  name: 'Industrial Production: Manufacturing (NAICS)'
+  unit: Index 2017=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_umtmno
+  source: fred
+  source_code: UMTMNO
+  name: "Manufacturers' New Orders: Total Manufacturing"
+  unit: Mil. of $
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_a36sno
+  source: fred
+  source_code: A36SNO
+  name: "Manufacturers' New Orders: Transportation Equipment"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_a34svs
+  source: fred
+  source_code: A34SVS
+  name: "Manufacturers' Value of Shipments: Computers and Electronic Products"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_ipn213111s
+  source: fred
+  source_code: IPN213111S
+  name: 'Industrial Production: Mining: Drilling Oil and Gas Wells (NAICS = 213111)'
+  unit: Index 2017=100
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_houstsflaa1fq
+  source: fred
+  source_code: HOUSTSFLAA1FQ
+  name: New Privately Owned Housing Starts in the United States, Average Square Feet of Floor Area 
+    for One-Family Units
+  unit: Thous. of Units
+  frequency: Q
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_daupnsa
+  source: fred
+  source_code: DAUPNSA
+  name: Domestic Auto Production
+  unit: Thous. of Units
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: other
+    macro_theme: activity
+- series_id: fred_a31sno
+  source: fred
+  source_code: A31SNO
+  name: "Manufacturers' New Orders: Primary Metals"
+  unit: Mil. of $
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_pcu334417334417
+  source: fred
+  source_code: PCU334417334417
+  name: 'Producer Price Index by Industry: Electronic Connector Manufacturing'
+  unit: Index Dec 1980=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: activity
+    macro_theme: activity
+- series_id: fred_pnrescon
+  source: fred
+  source_code: PNRESCON
+  name: 'Total Private Construction Spending: Nonresidential in the United States'
+  unit: Mil. of $
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_dautosa
+  source: fred
+  source_code: DAUTOSA
+  name: 'Motor Vehicle Retail Sales: Domestic Autos'
+  unit: Thous. of Units
+  frequency: M
+  sa_status: SA
+  transformations: []
+  tags:
+    category: demand
+    macro_theme: activity
+- series_id: fred_ir10000
+  source: fred
+  source_code: IR10000
+  name: 'Import Price Index (End Use): Crude Oil'
+  unit: Index 2000=100
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    category: energy
+    macro_theme: energy
