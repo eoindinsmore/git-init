@@ -36,3 +36,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# Excel lock files (created while registry_control.xlsx is open) — never commit
+~$*.xlsx
