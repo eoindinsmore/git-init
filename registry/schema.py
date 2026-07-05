@@ -73,6 +73,15 @@ class SeriesSpec(BaseModel):
     tags: Tags
     caveats: str | None = None  # required for price proxies; auto-rendered on charts/PDFs
 
+    # Optional, for richer sources:
+    # source_params — extra query parameters the adapter sends when fetching
+    #   (e.g. Eurostat dimension filters: geo, nace_r2, s_adj, unit).
+    source_params: dict[str, str] = Field(default_factory=dict)
+    # selector — post-fetch selection of ONE series from a multi-dimensional
+    #   payload, mapping the source's dimension id to the category code to keep
+    #   (e.g. e-Stat {"cat02": "2021010010"}). Empty for single-series sources.
+    selector: dict[str, str] = Field(default_factory=dict)
+
     @model_validator(mode="after")
     def _price_proxy_needs_caveats(self) -> SeriesSpec:
         is_proxy = self.tags.category is Category.PRICE_PROXY

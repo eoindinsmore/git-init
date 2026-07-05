@@ -55,9 +55,10 @@ def _coerce(df: pd.DataFrame) -> pd.DataFrame:
     df["frequency"] = df["frequency"].astype("string")
     df["unit"] = df["unit"].astype("string")
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
-    df["date"] = pd.to_datetime(df["date"], errors="coerce")
-    df["as_of"] = pd.to_datetime(df["as_of"], errors="coerce")
-    df["last_updated"] = pd.to_datetime(df["last_updated"], errors="coerce")
+    # Normalize every datetime column to tz-naive UTC. Sources vary (FRED naive,
+    # Eurostat tz-aware); a single dtype keeps vintage merges and comparisons sane.
+    for col in ("date", "as_of", "last_updated"):
+        df[col] = pd.to_datetime(df[col], errors="coerce", utc=True).dt.tz_localize(None)
     return df
 
 
