@@ -13,4 +13,13 @@ cp env.example .env   # then fill in your free API keys
 
 ## Status
 
-Step 1 in progress: registry + BaseAdapter + FRED adapter + Parquet layer.
+Build order steps 1–3 complete (39 tests, ruff clean):
+
+- **Registry + store**: `registry/` (SeriesSpec + YAML loader), `quant/store.py`
+  (append-only, point-in-time Parquet fact table).
+- **Adapters** (`adapters/`, all on `BaseAdapter`): FRED, Eurostat, StatCan, e-Stat,
+  CFTC COT.
+- **Premium capture** (`adapters/premium.py`): daily yfinance AUP/EDP capture,
+  vintage-stamped; scheduled via Windows task `HomeFund-PremiumCapture`.
+
+See `docs/*_handover.md` per module. Next: Step 4 quant toolkit.
