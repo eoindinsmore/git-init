@@ -345,6 +345,46 @@ def sync(path: Path = WORKBOOK) -> dict[str, list[str]]:
     return report
 
 
+CANDIDATES = REPO / "registry_candidates.xlsx"
+
+
+def sync_candidates(path: Path = CANDIDATES) -> dict[str, list[str]]:
+    """Append discovery candidates (include=Y) into the registry YAML.
+
+    Reads every sheet of ``registry_candidates.xlsx`` (one per source), takes rows
+    flagged include=Y, validates each through ``SeriesSpec``, and appends new series
+    to their ``registry/<source>.yaml``. Deduped against the current registry.
+    Returns {"added": [...], "skipped": [...]}.
+    """
+    if not path.exists():
+        raise FileNotFoundError(f"{path} not found — run `python -m discovery.run` first.")
+
+    reg = load_registry()
+    report: dict[str, list[str]] = {"added": [], "skipped": []}
+    added_ids: set[str] = set()
+    for sheet in load_workbook(path, read_only=True).sheetnames:
+        for row in _read_sheet(path, sheet):
+            if str(row.get("include", "")).strip().upper() != "Y":
+                continue
+            sid = str(row.get("series_id", "")).strip()
+            if not sid:
+                continue
+            if sid in reg or sid in added_ids:
+                report["skipped"].append(f"{sid}: already in registry")
+                continue
+            try:
+                spec_dict = _row_to_spec_dict(row)
+                SeriesSpec.model_validate(spec_dict)  # loud validation before writing
+            except Exception as e:  # noqa: BLE001 — surface reason, skip the row
+                report["skipped"].append(f"{sid}: {type(e).__name__} — {str(e).splitlines()[0]}")
+                continue
+            _append_series_to_yaml(spec_dict["source"], spec_dict)
+            added_ids.add(sid)
+            report["added"].append(f"{sid} -> registry/{spec_dict['source']}.yaml")
+    build()  # refresh the control workbook so the new series show on the Series tab
+    return report
+
+
 # ---------------------------------------------------------------------------- main
 
 def main(argv: list[str]) -> int:
@@ -363,7 +403,17 @@ def main(argv: list[str]) -> int:
         if report["added"]:
             print("Next: pull data for the new series (run its adapter), then review the git diff.")
         return 0
-    print(f"unknown command {cmd!r}; use 'build' or 'sync'")
+    if cmd == "sync-candidates":
+        report = sync_candidates()
+        for line in report["added"]:
+            print(f"  [added] {line}")
+        print(f"sync-candidates complete — {len(report['added'])} added; "
+              f"{len(report['skipped'])} skipped.")
+        if report["added"]:
+            print("Next: bulk-pull with `python -m adapters.capture_all`, "
+                  "then review the git diff.")
+        return 0
+    print(f"unknown command {cmd!r}; use 'build', 'sync' or 'sync-candidates'")
     return 2
 
 
