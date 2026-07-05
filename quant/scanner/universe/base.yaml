@@ -1,0 +1,32 @@
+# Base dislocation-scan universe (spec §6).
+# Raw registry series + derived pairs/spreads. Curve slopes across the CME premium
+# forward curve will be added once the full-curve capture lands (front-month only
+# today — see docs/quant_data_gaps.md).
+
+name: base
+series:
+  - aluminium_premium_mw_us
+  - aluminium_premium_eu_dp
+  - copper_price_global
+  - copper_cot_mm_long
+  - copper_cot_mm_short
+  - copper_cot_prod_long
+  - copper_cot_prod_short
+
+derived:
+  - {id: copper_cot_mm_net, kind: spread, legs: [copper_cot_mm_long, copper_cot_mm_short],
+     label: "COT managed-money net"}
+  - {id: copper_cot_prod_net, kind: spread, legs: [copper_cot_prod_long, copper_cot_prod_short],
+     label: "COT producer net"}
+  - {id: alu_premium_us_eu_ratio, kind: ratio, legs: [aluminium_premium_mw_us, aluminium_premium_eu_dp],
+     label: "US/EU aluminium premium ratio"}
+
+# Multivariate joint-move vector: the two premiums + copper price. Flags days where
+# the *combination* is unusual even if no single leg is extreme.
+mahalanobis_set:
+  - aluminium_premium_mw_us
+  - aluminium_premium_eu_dp
+  - copper_price_global
+
+windows: [20, 60, 250]
+z_threshold: 2.0
