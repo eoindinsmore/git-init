@@ -39,3 +39,6 @@ Thumbs.db
 
 # Excel lock files (created while registry_control.xlsx is open) — never commit
 ~$*.xlsx
+
+# Discovery staging file — regenerated from source search APIs, not a source of truth
+registry_candidates.xlsx
