@@ -1,0 +1,24 @@
+# Global-macro regime spec (spec §7) — the canonical rule-based state definition.
+# The state series (VIX, global manufacturing PMI, broad USD) are NOT yet in the
+# registry/store — declared here so the intended model is explicit; classify_from_store
+# uses whatever states are available and reports the rest (see docs/quant_data_gaps.md).
+
+name: global_macro
+states:
+  - name: vix
+    series_id: vix_index
+    kind: band
+    params: {thresholds: [15.0, 25.0], labels: [low, mid, high]}
+  - name: pmi
+    series_id: global_mfg_pmi
+    kind: level_delta
+    params: {level_threshold: 50.0, delta_periods: 3}
+  - name: usd
+    series_id: usd_broad_index
+    kind: ma_trend
+    params: {window: 200, labels: [down, up]}
+
+# Suggested sizing multipliers surfaced to the tracker per regime (risk-off -> smaller).
+sizing_multipliers:
+  "vix=high | pmi=contr_falling | usd=up": 0.5
+  "vix=low | pmi=exp_rising | usd=down": 1.25
