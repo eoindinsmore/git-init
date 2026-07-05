@@ -51,6 +51,25 @@ def run_scan(
     )
 
 
+def run_mahalanobis_timeseries(
+    spec: UniverseSpec,
+    *,
+    window: int = 104,
+    as_of: str | pd.Timestamp | None = None,
+    registry_dir: Path | None = None,
+    path: Path = store.FACTS_PATH,
+) -> pd.Series:
+    """Rolling joint-dislocation distance over time for the universe's Mahalanobis set —
+    the multivariate screen as a chart (empty when the set/history is too thin)."""
+    from quant.scanner.core import mahalanobis_timeseries
+
+    raw = {sid: _levels(sid, as_of, registry_dir, path) for sid in spec.series}
+    raw = {k: v for k, v in raw.items() if not v.empty}
+    derived = build_derived(raw, spec.derived)
+    levels = {**raw, **derived}
+    return mahalanobis_timeseries(levels, spec.mahalanobis_set or [], window=window)
+
+
 def promote_flag(
     result: ScanResult,
     item: str,

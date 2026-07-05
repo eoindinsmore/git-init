@@ -137,6 +137,34 @@ def scan(
     )
 
 
+def mahalanobis_timeseries(
+    levels: dict[str, pd.Series],
+    mahalanobis_set: list[str],
+    *,
+    window: int = 104,
+) -> pd.Series:
+    """Rolling joint-dislocation distance over time (the multivariate screen as a chart).
+
+    For each date from ``window`` onward, the Mahalanobis distance of that date's joint
+    return vector vs the mean/covariance of the **trailing ``window``** observations. A
+    spike marks a date on which the *combination* of moves was unusual even if no single
+    series was individually extreme. Empty when fewer than two series or too little history.
+    """
+    cols = {m: _returns(levels[m]) for m in mahalanobis_set if m in levels}
+    if len(cols) < 2:
+        return pd.Series(dtype=float)
+    panel = pd.DataFrame(cols).dropna()
+    if len(panel) < window + 2:
+        return pd.Series(dtype=float)
+    arr = panel.to_numpy()
+    out: dict = {}
+    for i in range(window, len(panel)):
+        hist = arr[i - window : i]
+        d = stats.mahalanobis(arr[i], hist.mean(axis=0), np.cov(hist, rowvar=False))
+        out[panel.index[i]] = d
+    return pd.Series(out, name="mahalanobis")
+
+
 def _mahalanobis_scan(levels, mahalanobis_set) -> tuple[float | None, float | None]:
     if not mahalanobis_set:
         return None, None

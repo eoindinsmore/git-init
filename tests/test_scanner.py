@@ -80,3 +80,33 @@ def test_shipped_universe_loads():
     assert spec.name == "base"
     assert "copper_cot_mm_net" in [d.id for d in spec.derived]
     assert spec.mahalanobis_set
+
+
+def test_mahalanobis_timeseries_flags_a_joint_spike():
+    import numpy as np
+    import pandas as pd
+
+    from quant.scanner.core import mahalanobis_timeseries
+
+    idx = pd.date_range("2018-01-01", periods=160, freq="W")
+    rng = np.random.default_rng(0)
+    a = pd.Series(100 + np.cumsum(rng.normal(scale=1.0, size=160)), index=idx)
+    b = pd.Series(100 + np.cumsum(rng.normal(scale=1.0, size=160)), index=idx)
+    # Inject a large joint move at the last observation.
+    a.iloc[-1] += 25
+    b.iloc[-1] -= 25
+    ts = mahalanobis_timeseries({"a": a, "b": b}, ["a", "b"], window=104)
+    assert not ts.empty
+    assert (ts >= 0).all()
+    # The injected spike should be the largest distance in the series.
+    assert ts.idxmax() == idx[-1]
+
+
+def test_mahalanobis_timeseries_empty_when_too_few_series():
+    import pandas as pd
+
+    from quant.scanner.core import mahalanobis_timeseries
+
+    idx = pd.date_range("2020-01-01", periods=120, freq="W")
+    s = pd.Series(range(120), index=idx)
+    assert mahalanobis_timeseries({"a": s}, ["a"], window=104).empty

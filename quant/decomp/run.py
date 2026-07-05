@@ -13,7 +13,7 @@ from pathlib import Path
 import pandas as pd
 
 from quant import pit, store
-from quant.decomp.core import DecompResult, decompose
+from quant.decomp.core import ContributionSeries, DecompResult, contribution_timeseries, decompose
 from quant.decomp.spec import DecompSpec
 
 
@@ -26,6 +26,15 @@ class DecompRun:
     as_of: pd.Timestamp | None
 
 
+@dataclass(frozen=True)
+class ContributionTSRun:
+    series: ContributionSeries
+    spec: DecompSpec
+    used: list[str]
+    missing: list[str]
+    as_of: pd.Timestamp | None
+
+
 def _levels(series_id: str, as_of, registry_dir, path) -> pd.Series:
     if as_of is None:
         f = store.get_series(series_id, as_of=None, path=path)
@@ -34,6 +43,27 @@ def _levels(series_id: str, as_of, registry_dir, path) -> pd.Series:
     if f.empty:
         return pd.Series(dtype=float)
     return pd.Series(f["value"].to_numpy(), index=pd.DatetimeIndex(f["date"]), name=series_id)
+
+
+def fetch_levels(spec: DecompSpec, *, as_of, registry_dir, path):
+    """Fetch target + driver level series (point-in-time if ``as_of`` given).
+
+    Returns ``(target, driver_levels, used, missing)``. Missing drivers (declared but
+    absent from the store) are flagged, never hidden. Shared by the decomposition and
+    the contribution-timeseries runners so both see identical data."""
+    target = _levels(spec.target, as_of, registry_dir, path)
+    if target.empty:
+        raise ValueError(f"target series '{spec.target}' has no data in the store")
+    driver_levels: dict[str, pd.Series] = {}
+    missing: list[str] = []
+    for sid in spec.ordered_driver_ids:
+        lv = _levels(sid, as_of, registry_dir, path)
+        if lv.empty:
+            missing.append(sid)
+        else:
+            driver_levels[sid] = lv
+    used = [s for s in spec.ordered_driver_ids if s in driver_levels]
+    return target, driver_levels, used, missing
 
 
 def run_decomposition(
@@ -50,20 +80,9 @@ def run_decomposition(
     pass an ``as_of`` for an honest historical reconstruction.
     """
     cutoff = pd.Timestamp(as_of) if as_of is not None else None
-    target = _levels(spec.target, as_of, registry_dir, path)
-    if target.empty:
-        raise ValueError(f"target series '{spec.target}' has no data in the store")
-
-    driver_levels: dict[str, pd.Series] = {}
-    missing: list[str] = []
-    for sid in spec.ordered_driver_ids:
-        lv = _levels(sid, as_of, registry_dir, path)
-        if lv.empty:
-            missing.append(sid)
-        else:
-            driver_levels[sid] = lv
-
-    used = [s for s in spec.ordered_driver_ids if s in driver_levels]
+    target, driver_levels, used, missing = fetch_levels(
+        spec, as_of=as_of, registry_dir=registry_dir, path=path
+    )
     result = decompose(
         target,
         driver_levels,
@@ -74,3 +93,30 @@ def run_decomposition(
         window=window,
     )
     return DecompRun(result=result, spec=spec, used=used, missing=missing, as_of=cutoff)
+
+
+def run_contribution_timeseries(
+    spec: DecompSpec,
+    *,
+    as_of: str | pd.Timestamp | None = None,
+    window: tuple | None = None,
+    registry_dir: Path | None = None,
+    path: Path = store.FACTS_PATH,
+) -> ContributionTSRun:
+    """Fetch target + drivers (point-in-time if ``as_of`` given) and build the
+    time-resolved (stacked-area) decomposition — the companion to
+    :func:`run_decomposition`, using the identical fit."""
+    cutoff = pd.Timestamp(as_of) if as_of is not None else None
+    target, driver_levels, used, missing = fetch_levels(
+        spec, as_of=as_of, registry_dir=registry_dir, path=path
+    )
+    series = contribution_timeseries(
+        target,
+        driver_levels,
+        order=used,
+        frequency=spec.frequency,
+        return_kind=spec.return_kind,
+        est_window=spec.est_window,
+        window=window,
+    )
+    return ContributionTSRun(series=series, spec=spec, used=used, missing=missing, as_of=cutoff)

@@ -50,6 +50,29 @@ class DecompResult:
     sign_flips: dict[str, int] = field(default_factory=dict)
 
 
+@dataclass(frozen=True)
+class ContributionSeries:
+    """Time-resolved decomposition (spec: decomp_timeseries).
+
+    ``increments`` is the per-period contribution of each component (columns
+    ``[DRIFT, *drivers, RESIDUAL]``); ``cumulative`` is its running sum from the window
+    start. Offsetting ``cumulative`` by ``level_start`` reconstructs the (log-)price
+    path — the residual band closes the gap to ``actual``. Summed over the window the
+    columns equal the single-window :class:`DecompResult` contributions exactly.
+    """
+
+    increments: pd.DataFrame = field(repr=False)
+    cumulative: pd.DataFrame = field(repr=False)
+    level_start: float
+    reconstructed: pd.Series = field(repr=False)
+    actual: pd.Series = field(repr=False)
+    betas: pd.Series = field(repr=False)
+    order: list[str] = field(default_factory=list)
+    return_kind: str = "log"
+    frequency: str = "W"
+    additive_exact: bool = True
+
+
 def to_returns(levels: pd.Series, kind: str = "log") -> pd.Series:
     """Period returns from a level series. ``log`` returns are additive over windows."""
     levels = levels.astype(float)
@@ -172,4 +195,81 @@ def decompose(
         window=span,
         rolling_betas=roll,
         sign_flips=sign_flips,
+    )
+
+
+def contribution_timeseries(
+    target_levels: pd.Series,
+    driver_levels: dict[str, pd.Series],
+    *,
+    order: list[str],
+    frequency: str = "W",
+    return_kind: str = "log",
+    est_window: int = 104,
+    window: tuple | None = None,
+    betas: str = "static",
+) -> ContributionSeries:
+    """Time-resolved price decomposition — the stacked-area companion to :func:`decompose`.
+
+    Uses the *same* trailing-``est_window`` OLS-HAC fit as :func:`decompose`, but resolves
+    it per period: ``contribution_i(t) = beta_i * z_i(t)``, ``DRIFT(t) = const``, and the
+    ``RESIDUAL`` closes the identity so ``sum(columns) == y(t)`` every period. Summed over
+    the window the columns therefore equal :func:`decompose`'s single-window contributions.
+
+    With ``return_kind='log'`` the cumulative columns offset by ``level_start`` reconstruct
+    ``ln P(t)`` exactly (``additive_exact=True``); ``'pct'`` is approximate (compounding is
+    not additive) and says so. ``betas='static'`` is the only v1 policy.
+    """
+    if betas != "static":
+        raise ValueError("only betas='static' is implemented (rolling betas are a v2 item)")
+    order = [c for c in order if c in driver_levels]
+    if not order:
+        raise ValueError("no drivers available to decompose against")
+
+    freq = _resample_freq(frequency)
+    tgt = target_levels.astype(float).resample(freq).last()
+    y = to_returns(tgt, return_kind).rename("__target__")
+    cols = {name: to_returns(driver_levels[name].astype(float).resample(freq).last(),
+                             return_kind) for name in order}
+    z = orthogonalize(pd.DataFrame(cols), order)
+    panel = pd.concat([y, z], axis=1).dropna()
+    if len(panel) < len(order) + 2:
+        raise ValueError(
+            f"not enough overlapping observations ({len(panel)}) to fit {len(order)} drivers"
+        )
+
+    est = panel.iloc[-est_window:] if est_window and len(panel) > est_window else panel
+    res = stats.ols_hac(est["__target__"], est[order])
+    const = float(res.params.get("const", 0.0))
+
+    zdisp = _window_slice(z.loc[est.index], window)
+    if len(zdisp) == 0:
+        raise ValueError("display window contains no observations")
+    ydisp = est["__target__"].reindex(zdisp.index)
+
+    increments = pd.DataFrame(index=zdisp.index)
+    increments[DRIFT] = const
+    for name in order:
+        increments[name] = float(res.params.get(name, 0.0)) * zdisp[name]
+    increments[RESIDUAL] = ydisp - increments.sum(axis=1)
+    increments = increments[[DRIFT, *order, RESIDUAL]]
+    cumulative = increments.cumsum()
+
+    # Level reconstruction: log-price for log returns (exact), raw level for pct (approx).
+    level_space = np.log(tgt) if return_kind == "log" else tgt
+    actual = level_space.reindex(zdisp.index)
+    level_start = float(actual.iloc[0] - ydisp.iloc[0])  # level one period before the first
+    reconstructed = level_start + cumulative.sum(axis=1)
+
+    return ContributionSeries(
+        increments=increments,
+        cumulative=cumulative,
+        level_start=level_start,
+        reconstructed=reconstructed,
+        actual=actual,
+        betas=res.params,
+        order=order,
+        return_kind=return_kind,
+        frequency=frequency,
+        additive_exact=(return_kind == "log"),
     )
