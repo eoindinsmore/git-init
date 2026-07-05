@@ -1,0 +1,17 @@
+# e-Stat (Japan) series. source_code = statsDataId; selector pins the non-time
+# dimensions to a single series within the cube.
+
+- series_id: jp_iip_diecast
+  source: estat
+  source_code: "0004033012"
+  name: "Japan IIP — die-casting (steel & non-ferrous metals), 2024 table"
+  unit: "Index"
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    metal: steel
+    country: JP
+    category: activity
+  selector:
+    cat02: "2021010010"

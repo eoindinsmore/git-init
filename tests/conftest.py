@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -24,9 +25,28 @@ def fixture_dir() -> Path:
     return _latest_fixture_dir()
 
 
+def _load(fixture_dir: Path, name: str) -> Any:
+    return json.loads((fixture_dir / name).read_text(encoding="utf-8"))
+
+
 @pytest.fixture(scope="session")
 def fred_raw(fixture_dir: Path) -> dict:
     """The real FRED observations + metadata payloads captured by the harvester."""
-    obs = json.loads((fixture_dir / "fred_INDPRO_observations.json").read_text(encoding="utf-8"))
-    meta = json.loads((fixture_dir / "fred_INDPRO_meta.json").read_text(encoding="utf-8"))
+    obs = _load(fixture_dir, "fred_INDPRO_observations.json")
+    meta = _load(fixture_dir, "fred_INDPRO_meta.json")
     return {"observations": obs, "meta": meta}
+
+
+@pytest.fixture(scope="session")
+def eurostat_raw(fixture_dir: Path) -> dict:
+    return _load(fixture_dir, "eurostat_sts_inpr_m_DE.json")
+
+
+@pytest.fixture(scope="session")
+def statcan_raw(fixture_dir: Path) -> Any:
+    return _load(fixture_dir, "statcan_v65201210.json")
+
+
+@pytest.fixture(scope="session")
+def estat_raw(fixture_dir: Path) -> dict:
+    return _load(fixture_dir, "estat_statsdata_0004033012.json")

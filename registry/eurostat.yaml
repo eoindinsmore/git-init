@@ -1,0 +1,20 @@
+# Eurostat series. source_code = dataset id; source_params = dimension filters
+# that must reduce the cube to a single series.
+
+- series_id: de_industrial_production
+  source: eurostat
+  source_code: sts_inpr_m
+  name: "Germany Industrial Production (mining+manufacturing+energy, SCA)"
+  unit: "Index 2021=100"
+  frequency: M
+  sa_status: SA
+  transformations: [yoy]
+  tags:
+    metal: null
+    country: DE
+    category: activity
+  source_params:
+    geo: DE
+    nace_r2: B-D
+    s_adj: SCA
+    unit: I21

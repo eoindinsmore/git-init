@@ -1,0 +1,21 @@
+# StatCan (Canada) series. source_code = WDS vector id.
+#
+# NOTE: 65201210 is the harvester's PLACEHOLDER vector, kept here only so the
+# adapter has a runnable declaration. Replace with real metals-relevant vectors
+# (e.g. mineral production / trade series) — see the StatCan table pages for
+# vector ids. Charter build order: national-stats targets are firmed up later.
+
+- series_id: ca_placeholder_vector
+  source: statcan
+  source_code: "65201210"
+  name: "StatCan placeholder vector (REPLACE with a real target)"
+  unit: "units"
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    metal: null
+    country: CA
+    category: activity
+  source_params:
+    latestN: "600"
