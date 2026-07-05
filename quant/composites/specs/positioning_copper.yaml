@@ -1,0 +1,16 @@
+# Copper positioning composite (spec §5) — a demonstrable composite from series we
+# actually hold. Aggregates the COMEX COT long legs into one point-in-time PCA factor,
+# sign-fixed to managed-money long (higher = more bullish positioning).
+
+composite_id: copper_positioning_composite
+label: "Copper COMEX positioning"
+target: copper_price_global
+direction_convention: "high = bullish copper (crowded long positioning)"
+method: pca
+reference: copper_cot_mm_long
+min_window: 40
+expanding: true
+components:
+  - copper_cot_mm_long
+  - copper_cot_prod_long
+  - copper_cot_open_interest
