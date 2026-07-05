@@ -1,0 +1,83 @@
+[
+  {
+    "source": "fred_observations",
+    "url": "https://api.stlouisfed.org/fred/series/observations?series_id=INDPRO&api_key=<REDACTED>&file_type=json&observation_start=2015-01-01",
+    "http_status": 200,
+    "saved_to": "tests\\fixtures\\20260705\\fred_INDPRO_observations.json",
+    "sha256": "495e50408fc30a1f24a48da72ee2e0ea279d6f195e94de4befe79e21ad92efc8",
+    "harvested_utc": "2026-07-05T09:04:31.689588+00:00",
+    "note": "US industrial production - canonical FRED payload shape"
+  },
+  {
+    "source": "fred_series_meta",
+    "url": "https://api.stlouisfed.org/fred/series?series_id=INDPRO&api_key=<REDACTED>&file_type=json",
+    "http_status": 200,
+    "saved_to": "tests\\fixtures\\20260705\\fred_INDPRO_meta.json",
+    "sha256": "73efff6332aa524cafb6c2f9d28a8b6ce8604d0069817414513a243e890dd29a",
+    "harvested_utc": "2026-07-05T09:04:32.487979+00:00",
+    "note": "series metadata payload - feeds registry validation"
+  },
+  {
+    "source": "eurostat_ip",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_m?format=JSON&lang=EN&geo=DE&nace_r2=B-D&s_adj=SCA&unit=I21&sinceTimePeriod=2022-01",
+    "http_status": 200,
+    "saved_to": "tests\\fixtures\\20260705\\eurostat_sts_inpr_m_DE.json",
+    "sha256": "d0a4843bca5fff9ce30a8e3f3ae033921df599355825f73a8738b4b08322c18e",
+    "harvested_utc": "2026-07-05T09:04:34.496371+00:00",
+    "note": "German industrial production, JSON-stat format"
+  },
+  {
+    "source": "statcan_vector",
+    "url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorsAndLatestNPeriods",
+    "http_status": 200,
+    "saved_to": "tests\\fixtures\\20260705\\statcan_v65201210.json",
+    "sha256": "aa516b77596287d3658f5daf8a1637a79423ab271124c2703f237c7c76306c35",
+    "harvested_utc": "2026-07-05T09:04:36.313627+00:00",
+    "note": "WDS vector payload; replace placeholder vector with real target"
+  },
+  {
+    "source": "estat_statslist",
+    "url": "https://api.e-stat.go.jp/rest/3.0/app/json/getStatsList?appId=<REDACTED>&searchWord=IIP&limit=5",
+    "http_status": 200,
+    "saved_to": "tests\\fixtures\\20260705\\estat_statslist_iip.json",
+    "sha256": "692a601694c607be6bd6a8a7011ec16a09fe4f4039b21237551a675a7fb8d1a9",
+    "harvested_utc": "2026-07-05T09:04:48.788811+00:00",
+    "note": "catalogue search payload - use to locate statsDataId values"
+  },
+  {
+    "source": "cftc_cot_copper",
+    "url": "https://publicreporting.cftc.gov/resource/72hh-3qpy.json?%24limit=100&%24order=report_date_as_yyyy_mm_dd+DESC&%24where=upper%28market_and_exchange_names%29+like+%27COPPER%25%27",
+    "http_status": 200,
+    "saved_to": "tests\\fixtures\\20260705\\cftc_disagg_copper.json",
+    "sha256": "d6b11e5f488246dcc08326012f2fab277097ae6f1cffc36b7b6afb33f22cce62",
+    "harvested_utc": "2026-07-05T09:04:50.968525+00:00",
+    "note": "disaggregated COT, COMEX copper incl. related contracts"
+  },
+  {
+    "source": "yfinance HG=F",
+    "url": "yfinance:HG=F",
+    "http_status": "OK",
+    "saved_to": "tests\\fixtures\\20260705\\yf_HG_comex_copper.csv",
+    "sha256": "904498cfb266bd3c30ea5cd6e2f0c161d97ab8e5b3e229ffbdd8a04ae086842a",
+    "harvested_utc": "2026-07-05T09:05:00.374816+00:00",
+    "note": ""
+  },
+  {
+    "source": "yfinance ALI=F",
+    "url": "yfinance:ALI=F",
+    "http_status": "OK",
+    "saved_to": "tests\\fixtures\\20260705\\yf_ALI_aluminum.csv",
+    "sha256": "3d59f420ae99ac74af06bc7c7b831d8e048b500163d2623308c7d4509acb4338",
+    "harvested_utc": "2026-07-05T09:05:00.577580+00:00",
+    "note": ""
+  },
+  {
+    "source": "yfinance AUP=F",
+    "url": "yfinance:AUP=F",
+    "http_status": "OK",
+    "saved_to": "tests\\fixtures\\20260705\\yf_AUP_midwest_premium.csv",
+    "sha256": "78ffa0dac80392e8b07c445c56ae5be8f8079df5c2d087d8d90e69d9389e6b95",
+    "harvested_utc": "2026-07-05T09:05:00.769285+00:00",
+    "note": "thin/illiquid contract - expect gaps and stale quotes"
+  }
+]

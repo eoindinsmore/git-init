@@ -63,6 +63,18 @@ STATCAN_VECTOR_ID = os.getenv("STATCAN_VECTOR_ID", "65201210")
 
 manifest: list[dict] = []
 
+# Query params that carry secrets — redacted from recorded URLs so the
+# committed manifest never leaks a key (rule #5: never print/commit secrets).
+_SECRET_PARAMS = ("api_key", "appId", "token", "apikey", "api-key", "key")
+
+
+def _redact(url: str) -> str:
+    """Mask secret query-string values in a URL before recording it."""
+    import re
+
+    pattern = r"(?i)([?&](?:%s)=)[^&#]+" % "|".join(re.escape(p) for p in _SECRET_PARAMS)
+    return re.sub(pattern, r"\1<REDACTED>", url)
+
 
 # ---------------------------------------------------------------- helpers
 
@@ -70,7 +82,7 @@ manifest: list[dict] = []
 def _record(name: str, url: str, status: int | str, path: Path | None, note: str = ""):
     entry = {
         "source": name,
-        "url": url,
+        "url": _redact(url),
         "http_status": status,
         "saved_to": str(path) if path else None,
         "sha256": hashlib.sha256(path.read_bytes()).hexdigest() if path else None,

@@ -1,0 +1,42 @@
+[project]
+name = "home-fund"
+version = "0.1.0"
+description = "Personal commodities research platform (home hedge fund) — base metals, copper-weighted, free/public data only."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "pandas>=2.2",
+    "pyarrow>=15.0",
+    "requests>=2.31",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+    "tenacity>=8.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+    "mypy>=1.9",
+]
+proxies = [
+    "yfinance>=0.2",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["adapters", "quant", "models", "tracker", "registry"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

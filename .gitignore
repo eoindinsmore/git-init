@@ -1,0 +1,38 @@
+# Secrets — rule #5: secrets live in .env, never committed
+.env
+.env.*
+!env.example
+
+# Data layer — local Parquet fact table is gitignored (architecture contract)
+data/
+!data/manual/.gitkeep
+
+# Harvested fixtures raw payloads are large/dated; keep the dir, ignore contents
+# (curated fixtures under tests/fixtures/ are committed deliberately — see below)
+tests/fixtures/**/*_ERROR.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env.local
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local Claude Code settings (machine-specific permissions)
+.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
