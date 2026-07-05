@@ -1,0 +1,35 @@
+# FRED series declarations.
+# series_id is our canonical id; source_code is FRED's series id.
+# Add a series here BEFORE pulling it for the first time.
+
+- series_id: us_industrial_production
+  source: fred
+  source_code: INDPRO
+  name: "US Industrial Production: Total Index"
+  unit: "Index 2017=100"
+  frequency: M
+  sa_status: SA
+  transformations: [yoy]
+  tags:
+    metal: null
+    country: US
+    category: activity
+
+# Price proxy: IMF global copper price via FRED (free). Not an exchange price —
+# carries caveats per the charter (auto-rendered on charts/PDFs).
+- series_id: copper_price_global
+  source: fred
+  source_code: PCOPPUSDM
+  name: "Global Price of Copper (IMF, via FRED)"
+  unit: "USD per metric ton"
+  frequency: M
+  sa_status: NSA
+  transformations: []
+  tags:
+    metal: copper
+    country: null
+    category: price_proxy
+  caveats: >-
+    IMF Primary Commodity Prices — a monthly reference average, NOT an LME/COMEX
+    settlement. No intramonth granularity; may lag exchange moves. Use as a
+    long-history proxy only, not for execution or premium analysis.
