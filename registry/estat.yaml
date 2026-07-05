@@ -9,6 +9,8 @@
   frequency: M
   sa_status: NSA
   transformations: [yoy]
+  publication_lag_days: 30
+  release_schedule: "monthly, ~30 days after the reference month (METI/e-Stat IIP)"
   tags:
     metal: steel
     country: JP

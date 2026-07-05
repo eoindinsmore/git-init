@@ -98,6 +98,15 @@ class SeriesSpec(BaseModel):
     tags: Tags
     caveats: str | None = None  # required for price proxies; auto-rendered on charts/PDFs
 
+    # Point-in-time honesty (quant toolkit foundation). ``publication_lag_days`` is the
+    # typical number of days from an observation's period-end to its first public release.
+    # It is what makes lead-lag tests and nowcasts honest: the March value of a series with
+    # a 45-day lag is not knowable on 1 April even though the store may hold it (e.g. because
+    # history was backfilled today under a single ``as_of``). ``quant.pit.get_series_asof``
+    # enforces it. 0 = knowable at period end (correct for daily price proxies).
+    publication_lag_days: int = Field(default=0, ge=0)
+    release_schedule: str | None = None  # optional human note, e.g. "monthly, ~15th of month"
+
     # Optional, for richer sources:
     # source_params — extra query parameters the adapter sends when fetching
     #   (e.g. Eurostat dimension filters: geo, nace_r2, s_adj, unit).

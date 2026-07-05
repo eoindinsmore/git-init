@@ -9,6 +9,8 @@
   frequency: M
   sa_status: SA
   transformations: [yoy]
+  publication_lag_days: 40
+  release_schedule: "monthly, ~40 days after the reference month (Eurostat STS)"
   tags:
     metal: null
     country: DE

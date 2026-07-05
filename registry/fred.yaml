@@ -10,6 +10,8 @@
   frequency: M
   sa_status: SA
   transformations: [yoy]
+  publication_lag_days: 16
+  release_schedule: "monthly, ~mid-month for the prior month (Federal Reserve G.17)"
   tags:
     metal: null
     country: US
@@ -26,6 +28,8 @@
   frequency: M
   sa_status: NSA
   transformations: []
+  publication_lag_days: 14
+  release_schedule: "monthly, early in the month for the prior month (IMF PCPS)"
   tags:
     metal: copper
     country: null

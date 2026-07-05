@@ -13,6 +13,8 @@
   frequency: M
   sa_status: NSA
   transformations: []
+  publication_lag_days: 45
+  release_schedule: "monthly (placeholder estimate; firm up with the real vector)"
   tags:
     metal: null
     country: CA

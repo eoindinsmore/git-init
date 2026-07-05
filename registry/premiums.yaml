@@ -9,6 +9,8 @@
   frequency: D
   sa_status: NSA
   transformations: []
+  publication_lag_days: 0
+  release_schedule: "daily settlement, same-day capture"
   tags:
     metal: aluminium
     country: US
@@ -29,6 +31,8 @@
   frequency: D
   sa_status: NSA
   transformations: []
+  publication_lag_days: 0
+  release_schedule: "daily settlement, same-day capture"
   tags:
     metal: aluminium
     country: null

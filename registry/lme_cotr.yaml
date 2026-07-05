@@ -2,6 +2,8 @@
 # One series per (category, side); source_params carries the CDN folder/key and
 # the cell selector. category: positioning. Adds an LME-side view to complement
 # the CFTC COMEX COT (different exchange, MiFID II classifications).
+#
+# publication_lag_days: 4 — Friday position date, published the following Tuesday.
 
 - series_id: copper_lme_inv_funds_long
   source: lme_cotr
@@ -11,6 +13,8 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 4
+  release_schedule: "weekly, Tuesday for the prior Friday positions"
   tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
   source_params: {folder: "ca-copper", key: "ca", category: "Investment Funds", side: "Long", basis: "Total"}
 
@@ -22,6 +26,8 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 4
+  release_schedule: "weekly, Tuesday for the prior Friday positions"
   tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
   source_params: {folder: "ca-copper", key: "ca", category: "Investment Funds", side: "Short", basis: "Total"}
 
@@ -33,6 +39,8 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 4
+  release_schedule: "weekly, Tuesday for the prior Friday positions"
   tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
   source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Long", basis: "Total"}
 
@@ -44,5 +52,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 4
+  release_schedule: "weekly, Tuesday for the prior Friday positions"
   tags: {metal: copper, country: GB, category: positioning, macro_theme: positioning}
   source_params: {folder: "ca-copper", key: "ca", category: "Commercial Undertaking", side: "Short", basis: "Total"}

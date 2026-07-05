@@ -1,6 +1,10 @@
 # CFTC Commitments of Traders (disaggregated futures-only), COMEX copper.
 # One series per position field; source_code = CFTC column, source_params.market
 # filters the dataset. category: positioning.
+#
+# publication_lag_days: 3 — Tuesday position date, released the following Friday.
+# The adapter already stamps as_of = report_date + 3d; this metadata documents the
+# same lag so downstream lead-lag/nowcast code reads it without adapter internals.
 
 - series_id: copper_cot_open_interest
   source: cftc
@@ -10,6 +14,8 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 3
+  release_schedule: "weekly, Friday 15:30 ET for Tuesday positions"
   tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
 
@@ -21,6 +27,8 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 3
+  release_schedule: "weekly, Friday 15:30 ET for Tuesday positions"
   tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
 
@@ -32,6 +40,8 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 3
+  release_schedule: "weekly, Friday 15:30 ET for Tuesday positions"
   tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
 
@@ -43,6 +53,8 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 3
+  release_schedule: "weekly, Friday 15:30 ET for Tuesday positions"
   tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
 
@@ -54,5 +66,7 @@
   frequency: W
   sa_status: NSA
   transformations: []
+  publication_lag_days: 3
+  release_schedule: "weekly, Friday 15:30 ET for Tuesday positions"
   tags: {metal: copper, country: US, category: positioning, macro_theme: positioning}
   source_params: {market: "COPPER%"}
