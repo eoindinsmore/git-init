@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dashboard",
+      "runtimeExecutable": "C:\\Users\\eoind\\Home_HF\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": ["-m", "streamlit", "run", "app/Home.py",
+        "--server.headless", "true", "--server.port", "8521",
+        "--browser.gatherUsageStats", "false"],
+      "port": 8521
+    }
+  ]
+}
