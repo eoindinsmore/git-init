@@ -32,6 +32,8 @@ class LabConfig:
     min_sharpe: float = 0.0  # economic gate threshold (net)
     max_flip_share: float = 0.35  # stability: reject if minority-sign share exceeds this
     cost_per_turnover: float = 0.0
+    use_backtester: bool = False  # gate 4 via the real Phase-5 backtester (deflated Sharpe)
+    backtester_cost_bps: float = 10.0
 
 
 @dataclass
@@ -133,10 +135,22 @@ def run_lab(
         )
 
         # --- Gate 4: economic significance ---
-        econ = core.economic_significance(
-            target, cser, lag=best_lag, beta_sign=beta,
-            cost_per_turnover=cfg.cost_per_turnover, z_window=cfg.stability_window,
-        )
+        if cfg.use_backtester:
+            # Phase-5 retrofit: the real backtester (vol-targeted, cost-aware, deflated
+            # Sharpe). The candidate positioned at its lead is the signal; target is the
+            # instrument return series.
+            from quant.backtest import signal_sharpe
+
+            sharpe = signal_sharpe(
+                cser.shift(best_lag), target, cost_bps=cfg.backtester_cost_bps,
+                n_variants_tried=len(scan),
+            )
+            econ = {"sharpe_net": sharpe, "engine": "backtester"}
+        else:
+            econ = core.economic_significance(
+                target, cser, lag=best_lag, beta_sign=beta,
+                cost_per_turnover=cfg.cost_per_turnover, z_window=cfg.stability_window,
+            )
         gates["economic"] = core.GateOutcome(
             passed=(pd.notna(econ["sharpe_net"]) and econ["sharpe_net"] > cfg.min_sharpe),
             detail=econ,
