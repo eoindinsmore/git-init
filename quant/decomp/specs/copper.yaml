@@ -1,0 +1,18 @@
+# Copper price decomposition spec (spec §4).
+# target = the IMF monthly copper proxy we hold; drivers declared in economic
+# orthogonalization order (order: lower = residualized first). Several drivers are
+# NOT yet in the registry/store (broad USD, US 10y real yield, energy composite) —
+# they are listed so the intended model is explicit; run_decomposition drops the
+# missing ones loudly and reports them (see docs/quant_data_gaps.md).
+
+target: copper_price_global
+target_label: "Copper (IMF global price proxy)"
+frequency: "M"        # monthly target -> monthly returns
+est_window: 60        # ~5y monthly
+return_kind: log
+drivers:
+  - {series_id: usd_broad_index,          label: "Broad USD",            order: 0}
+  - {series_id: us_10y_real_yield,        label: "US 10y real yield",    order: 1}
+  - {series_id: us_industrial_production, label: "US industrial prod.",  order: 2}
+  - {series_id: energy_input_composite,   label: "Energy inputs",        order: 3}
+  - {series_id: copper_cot_mm_long,       label: "COT managed-money long", order: 4}

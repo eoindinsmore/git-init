@@ -1,0 +1,15 @@
+# Aluminium premium decomposition spec (spec §4).
+# target = US Midwest duty-unpaid premium proxy (front-month). Drivers in economic
+# orthogonalization order. Most macro drivers are NOT yet ingested (broad USD, real
+# rates, China activity, energy) — declared for intent; the runner flags the gaps.
+
+target: aluminium_premium_mw_us
+target_label: "Aluminium US Midwest premium (CME AUP front-month)"
+frequency: "W"        # daily proxy -> weekly returns
+est_window: 104       # ~2y weekly
+return_kind: log
+drivers:
+  - {series_id: usd_broad_index,        label: "Broad USD",           order: 0}
+  - {series_id: us_10y_real_yield,      label: "US 10y real yield",   order: 1}
+  - {series_id: china_activity_composite, label: "China activity",    order: 2}
+  - {series_id: energy_input_composite, label: "Energy inputs",       order: 3}
