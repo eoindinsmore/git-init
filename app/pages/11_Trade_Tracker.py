@@ -19,7 +19,7 @@ import streamlit as st  # noqa: E402
 
 from app import theme  # noqa: E402
 from app import toolkit_ui as ui  # noqa: E402
-from tracker import analytics, calls, marking  # noqa: E402
+from tracker import analytics, calls, marking, report  # noqa: E402
 from tracker import events as ev  # noqa: E402
 from tracker.calls import CallError  # noqa: E402
 from tracker.events import LIVE_EXPRESSIONS  # noqa: E402
@@ -190,6 +190,16 @@ if cf.get("n_with_counterfactual"):
         f"{cf['mean_actual_R']:+.2f}R vs. {cf['mean_held_to_plan_R']:+.2f}R if held to "
         f"plan (edge from closing {cf['edge_from_closing_R']:+.2f}R)."
     )
+
+# --- Export the one-page track record ---------------------------------------------
+st.download_button(
+    "⬇ Download one-page track record (HTML)",
+    data=report.render_html(view),
+    file_name="track_record.html",
+    mime="text/html",
+    help="Self-contained, self-caveating one-pager with the hash-chain verification line. "
+    "PDF via `python -m tracker.cli report --out track_record.pdf` (needs the [report] extra).",
+)
 
 theme.caveat_block(
     "Marking conventions: entry = next close after the call is logged (never same-day); "

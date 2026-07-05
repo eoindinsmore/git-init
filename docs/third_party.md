@@ -33,6 +33,12 @@ must **never** be copied or closely adapted — reimplement concepts from scratc
 
 All three are permissive BSD-3 — charter-compliant. No GPL in the tree.
 
+## Track-record PDF (`pip install -e .[report]`)
+
+| Library | Licence | Used for | Notes |
+|---|---|---|---|
+| weasyprint | BSD-3-Clause | tracker one-page track-record PDF | Optional. HTML report always works without it; only the PDF renderer needs it. Native deps (Pango/cairo) can be awkward on Windows — the renderer degrades PDF→HTML if absent. |
+
 **Reimplemented, not borrowed:** the backtester's Carver-style forecast capping
 and volatility-targeted sizing are reimplemented from the published concepts, not
 copied from `pysystemtrade` (GPL-3.0).

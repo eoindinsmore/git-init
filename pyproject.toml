@@ -35,6 +35,11 @@ quant = [
     "statsmodels>=0.14",
     "scikit-learn>=1.3",
 ]
+report = [
+    # One-page track-record PDF (tracker spec §5). BSD-3. HTML always works without it;
+    # WeasyPrint only enables the PDF renderer (native deps can be awkward on Windows).
+    "weasyprint>=60",
+]
 
 [build-system]
 requires = ["setuptools>=68"]
